@@ -1,0 +1,17 @@
+github "Alamofire/Alamofire" ~> 4.8
+github "Alamofire/AlamofireImage"
+
+github "ReactiveX/RxSwift" "4.4.2"
+github "RxSwiftCommunity/Action" ~> 3.11
+
+github "Moya/Moya" "develop"
+
+github "quickbirdstudios/XCoordinator"
+
+github "SnapKit/SnapKit"
+
+github "mac-cain13/R.swift.Library"
+
+github "Quick/Quick"
+github "Quick/Nimble"
+github "RxSwiftCommunity/RxNimble"

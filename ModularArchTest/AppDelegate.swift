@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MATUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     var window: UIWindow? = UIWindow()
-    let coordinator = AppCoordinator()
+    let coordinator = AppCoordinator(modules: [CoreModule(), UIModule()])
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         if let window = self.window {

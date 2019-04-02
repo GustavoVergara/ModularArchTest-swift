@@ -20,9 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let coordinator = AppCoordinator(modules: [CoreModule(), UIModule()])
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        if let window = self.window {
-            self.coordinator.setRoot(for: window)
-        }
+        self.window.map(self.coordinator.setRoot)
         return true
     }
     

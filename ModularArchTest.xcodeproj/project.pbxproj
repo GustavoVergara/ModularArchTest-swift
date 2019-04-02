@@ -31,6 +31,7 @@
 		9B1BDF3D224FC85100F51375 /* MATUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDF33224FC78500F51375 /* MATUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B1BDF3F224FC86800F51375 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF3E224FC86800F51375 /* Coordinator.swift */; };
 		9B1BDF4622529D7A00F51375 /* CoreModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF4522529D7A00F51375 /* CoreModule.swift */; };
+		9B1BDFC12252BDC300F51375 /* CallbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDFC02252BDC300F51375 /* CallbackHandler.swift */; };
 		9B3D34DA2224891500E97AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D34D92224891500E97AA4 /* AppDelegate.swift */; };
 		9B3D34E12224891800E97AA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3D34E02224891800E97AA4 /* Assets.xcassets */; };
 		9B3D34E42224891800E97AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3D34E22224891800E97AA4 /* LaunchScreen.storyboard */; };
@@ -91,6 +92,7 @@
 		9B1BDF33224FC78500F51375 /* MATUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MATUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B1BDF3E224FC86800F51375 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9B1BDF4522529D7A00F51375 /* CoreModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModule.swift; sourceTree = "<group>"; };
+		9B1BDFC02252BDC300F51375 /* CallbackHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallbackHandler.swift; sourceTree = "<group>"; };
 		9B3D34D62224891500E97AA4 /* ModularArchTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModularArchTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B3D34D92224891500E97AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B3D34E02224891800E97AA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		9B96D4CA2225CCE30071BD20 /* TestKit */ = {
 			isa = PBXGroup;
 			children = (
+				9B1BDFC02252BDC300F51375 /* CallbackHandler.swift */,
 				9B96D4CB2225CCFE0071BD20 /* TestScheduler+MarbleTests.swift */,
 				9B96D4ED222735A20071BD20 /* TestCoordinator.swift */,
 				9B96D4F1222749330071BD20 /* AssertThrowable.swift */,
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B96D4F2222749330071BD20 /* AssertThrowable.swift in Sources */,
+				9B1BDFC12252BDC300F51375 /* CallbackHandler.swift in Sources */,
 				9B96D4EE222735A20071BD20 /* TestCoordinator.swift in Sources */,
 				9B96D4C72224B0610071BD20 /* UserSearchViewModelTests.swift in Sources */,
 				9B96D4CC2225CCFF0071BD20 /* TestScheduler+MarbleTests.swift in Sources */,
@@ -580,7 +584,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = gvergara.ModularArchTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -602,7 +606,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = gvergara.ModularArchTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -738,7 +742,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = gvergara.ModularArchTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Debug InjectionIII";

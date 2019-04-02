@@ -12,39 +12,20 @@ import XCoordinator
 
 class CoreModule: Module {
     
-    var appCoordinator = AppCoordinator()
-    
-    override func coordinator<R: Route, T: TransitionProtocol>(for route: R, transition: T.Type) -> AnyOptionalCoordinator<R, T>? {
-        switch route {
-        case let route as AppRoute where self.appCoordinator.hasTransition(for: route):
-            return self.appCoordinator.anyOptionalCoordinator as? AnyOptionalCoordinator<R, T>
+    override func destination<R: Route>(for route: R, router: AnyRouter<R>) -> Destination? {
+        switch (route, router) {
+        case let (route as AppRoute, _):
+            switch route {
+            case .externalURL(let url):
+                return Destination.action({
+                    UIApplication.shared.open(url)
+                })
+            case .userSearch, .repoDetail, .userProfile:
+                return nil
+            }
         default:
             return nil
         }
-    }
-    
-    class AppCoordinator: NavigationCoordinator<AppRoute>, OptionalTransition {
-        
-        func hasTransition(for route: AppRoute) -> Bool {
-            switch route {
-            case .externalURL(let url):
-                UIApplication.shared.open(url)
-                return true
-            case .userSearch, .repoDetail, .userProfile:
-                return false
-            }
-        }
-        
-        override func prepareTransition(for route: AppRoute) -> NavigationTransition {
-            switch route {
-            case .externalURL(let url):
-                UIApplication.shared.open(url)
-                return .none()
-            case .userSearch, .repoDetail, .userProfile:
-                return .none()
-            }
-        }
-        
     }
     
 }

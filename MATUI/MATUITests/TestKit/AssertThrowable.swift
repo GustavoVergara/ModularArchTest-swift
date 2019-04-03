@@ -11,12 +11,12 @@ import Nimble
 import Quick
 
 func assertThrowableReturnsOptional<Return>(expression: @autoclosure @escaping () throws -> Return) -> Return? {
-    expect(expression).toNot(throwError())
+    expect(try expression()).toNot(throwError())
     return try? expression()
 }
 
 func assertThrowable<Return>(expression: @autoclosure @escaping () throws -> Return) -> Return {
-    let returnValue = assertThrowableReturnsOptional(expression: expression)
+    let returnValue = assertThrowableReturnsOptional(expression: try expression())
     expect(returnValue).toNot(beNil())
     return returnValue!
 }

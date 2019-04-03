@@ -15,6 +15,7 @@ import RxTest
 import Nimble
 import XCoordinator
 import Moya
+import MATKit
 @testable import MATUI
 
 class UserProfileViewModelTests: XCTestCase {

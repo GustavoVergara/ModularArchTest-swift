@@ -9,9 +9,10 @@
 import Foundation
 import XCoordinator
 import RxSwift
+import MATKit
 @testable import MATUI
 
-class TestAppCoordinator: AppCoordinator {
+class TestAppCoordinator: NavigationCoordinator<AppRoute> {
     typealias TriggerCallback = (RouteType) -> Void
     
     private var onTriggerCallbacks: Callback.Handlers<TriggerCallback> = []

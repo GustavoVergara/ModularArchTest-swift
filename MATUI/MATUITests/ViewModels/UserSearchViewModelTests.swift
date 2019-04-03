@@ -15,6 +15,7 @@ import RxNimbleRxBlocking
 import RxTest
 import XCoordinator
 import Moya
+import MATKit
 @testable import MATUI
 
 class UserSearchViewModelTests: XCTestCase {

@@ -6,9 +6,9 @@
 
 import Foundation
 
-enum Callback {
+public enum Callback {
     
-    class DisposeBag {
+    public class DisposeBag {
         
         var cancellers: [Canceller] = []
         
@@ -16,44 +16,44 @@ enum Callback {
             self.dispose()
         }
         
-        func add(_ canceller: Canceller) {
+        public func add(_ canceller: Canceller) {
             self.cancellers.append(canceller)
         }
         
-        func dispose() {
+        public func dispose() {
             self.cancellers.forEach({ $0.cancel() })
             self.cancellers = []
         }
         
     }
     
-    struct Canceller {
-        let cancel: () -> Void
+    public struct Canceller {
+        public let cancel: () -> Void
         
-        init(cancel: @escaping () -> Void) {
+        public init(cancel: @escaping () -> Void) {
             self.cancel = cancel
         }
     }
     
-    typealias HandlerToken = UInt
-    struct Handlers<T>: Sequence, ExpressibleByArrayLiteral {
+    public typealias HandlerToken = UInt
+    public struct Handlers<T>: Sequence, ExpressibleByArrayLiteral {
         
-        typealias KeyValue = (key: HandlerToken, value: T)
+        public typealias KeyValue = (key: HandlerToken, value: T)
         
         private var currentKey: HandlerToken = 0
         private var elements = [KeyValue]()
         
         /// The type of the elements of an array literal.
-        typealias ArrayLiteralElement = T
+        public typealias ArrayLiteralElement = T
         
         /// Creates an instance initialized with the given elements.
-        init(arrayLiteral elements: ArrayLiteralElement...) {
+        public init(arrayLiteral elements: ArrayLiteralElement...) {
             for element in elements {
                 _ = self.append(element)
             }
         }
         
-        mutating func append(_ value: T) -> HandlerToken {
+        public mutating func append(_ value: T) -> HandlerToken {
             self.currentKey = self.currentKey &+ 1
             
             self.elements.append((key: self.currentKey, value: value))
@@ -62,18 +62,18 @@ enum Callback {
         }
         
         @discardableResult
-        mutating func remove(_ token: HandlerToken) -> T? {
+        public mutating func remove(_ token: HandlerToken) -> T? {
             for i in self.elements.indices where self.elements[i].key == token {
                 return self.elements.remove(at: i).value
             }
             return nil
         }
         
-        mutating func removeAll(keepCapacity: Bool = false) {
+        public mutating func removeAll(keepCapacity: Bool = false) {
             self.elements.removeAll(keepingCapacity: keepCapacity)
         }
         
-        func makeIterator() -> AnyIterator<T> {
+        public func makeIterator() -> AnyIterator<T> {
             return AnyIterator(self.elements.map { $0.value }.makeIterator())
         }
     }

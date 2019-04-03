@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ModularArchTest.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MATKit/MATKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:MATUI/MATUI.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:ModularArchTest.xcodeproj">
    </FileRef>
 </Workspace>

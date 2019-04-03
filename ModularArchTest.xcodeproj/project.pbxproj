@@ -16,53 +16,28 @@
 		9B0A1815224F0D2C00D458E9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A180A224F0D2C00D458E9 /* Result.framework */; };
 		9B0A1818224F9BE200D458E9 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1816224F9BE200D458E9 /* Moya.framework */; };
 		9B0A1819224F9BE200D458E9 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1817224F9BE200D458E9 /* RxMoya.framework */; };
-		9B0A181B224F9C8B00D458E9 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A181A224F9C8B00D458E9 /* SnapKit.framework */; };
 		9B0A181D224FA43600D458E9 /* Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A181C224FA43600D458E9 /* Action.framework */; };
 		9B0A181F224FA56800D458E9 /* XCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A181E224FA56800D458E9 /* XCoordinator.framework */; };
-		9B0A1820224FAC3F00D458E9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1805224F0D2C00D458E9 /* Nimble.framework */; };
-		9B0A1821224FAC3F00D458E9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1801224F0D2C00D458E9 /* Quick.framework */; };
-		9B0A1824224FAFA600D458E9 /* RxNimbleRxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1822224FAFA600D458E9 /* RxNimbleRxBlocking.framework */; };
-		9B0A1825224FAFA600D458E9 /* RxNimbleRxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1823224FAFA600D458E9 /* RxNimbleRxTest.framework */; };
-		9B0A1826224FAFC300D458E9 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1804224F0D2C00D458E9 /* RxBlocking.framework */; };
-		9B0A1827224FAFC300D458E9 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1807224F0D2C00D458E9 /* RxTest.framework */; };
-		9B1BDF35224FC79300F51375 /* MATKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDF31224FC78500F51375 /* MATKit.framework */; };
-		9B1BDF36224FC79300F51375 /* MATKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDF31224FC78500F51375 /* MATKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9B1BDF3C224FC85100F51375 /* MATUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDF33224FC78500F51375 /* MATUI.framework */; };
-		9B1BDF3D224FC85100F51375 /* MATUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDF33224FC78500F51375 /* MATUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B1BDF3F224FC86800F51375 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF3E224FC86800F51375 /* Coordinator.swift */; };
 		9B1BDF4622529D7A00F51375 /* CoreModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF4522529D7A00F51375 /* CoreModule.swift */; };
-		9B1BDFC12252BDC300F51375 /* CallbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDFC02252BDC300F51375 /* CallbackHandler.swift */; };
+		9B2A78C82254274D006BECDC /* MATUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDF33224FC78500F51375 /* MATUI.framework */; };
+		9B2A78C92254274D006BECDC /* MATUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDF33224FC78500F51375 /* MATUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9B2A78CA2254274E006BECDC /* MATKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDF31224FC78500F51375 /* MATKit.framework */; };
+		9B2A78CB2254274E006BECDC /* MATKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDF31224FC78500F51375 /* MATKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B3D34DA2224891500E97AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D34D92224891500E97AA4 /* AppDelegate.swift */; };
 		9B3D34E12224891800E97AA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3D34E02224891800E97AA4 /* Assets.xcassets */; };
 		9B3D34E42224891800E97AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3D34E22224891800E97AA4 /* LaunchScreen.storyboard */; };
-		9B96D4C72224B0610071BD20 /* UserSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96D4C62224B0610071BD20 /* UserSearchViewModelTests.swift */; };
-		9B96D4CC2225CCFF0071BD20 /* TestScheduler+MarbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96D4CB2225CCFE0071BD20 /* TestScheduler+MarbleTests.swift */; };
-		9B96D4EE222735A20071BD20 /* TestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96D4ED222735A20071BD20 /* TestCoordinator.swift */; };
-		9B96D4F2222749330071BD20 /* AssertThrowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96D4F1222749330071BD20 /* AssertThrowable.swift */; };
-		9B96D515222877800071BD20 /* UserProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96D514222877800071BD20 /* UserProfileViewModelTests.swift */; };
-		9B96D51B22287DC50071BD20 /* profile_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B96D51A22287DC50071BD20 /* profile_image.jpeg */; };
-		9B96D527222A0FAB0071BD20 /* RepositoryDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96D526222A0FAA0071BD20 /* RepositoryDetailViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		9B3D34EB2224891800E97AA4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9B3D34CE2224891500E97AA4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9B3D34D52224891500E97AA4;
-			remoteInfo = RadixChallenge;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		9B1BDF3A224FC79300F51375 /* Embed Frameworks */ = {
+		9B2A78CC2254274E006BECDC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9B1BDF36224FC79300F51375 /* MATKit.framework in Embed Frameworks */,
-				9B1BDF3D224FC85100F51375 /* MATUI.framework in Embed Frameworks */,
+				9B2A78CB2254274E006BECDC /* MATKit.framework in Embed Frameworks */,
+				9B2A78C92254274D006BECDC /* MATUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,7 +58,6 @@
 		9B0A180A224F0D2C00D458E9 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = "<group>"; };
 		9B0A1816224F9BE200D458E9 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Moya.framework; sourceTree = "<group>"; };
 		9B0A1817224F9BE200D458E9 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxMoya.framework; sourceTree = "<group>"; };
-		9B0A181A224F9C8B00D458E9 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapKit.framework; sourceTree = "<group>"; };
 		9B0A181C224FA43600D458E9 /* Action.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Action.framework; sourceTree = "<group>"; };
 		9B0A181E224FA56800D458E9 /* XCoordinator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XCoordinator.framework; sourceTree = "<group>"; };
 		9B0A1822224FAFA600D458E9 /* RxNimbleRxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxNimbleRxBlocking.framework; sourceTree = "<group>"; };
@@ -92,21 +66,11 @@
 		9B1BDF33224FC78500F51375 /* MATUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MATUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B1BDF3E224FC86800F51375 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9B1BDF4522529D7A00F51375 /* CoreModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModule.swift; sourceTree = "<group>"; };
-		9B1BDFC02252BDC300F51375 /* CallbackHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallbackHandler.swift; sourceTree = "<group>"; };
 		9B3D34D62224891500E97AA4 /* ModularArchTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModularArchTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B3D34D92224891500E97AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B3D34E02224891800E97AA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B3D34E32224891800E97AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B3D34E52224891800E97AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B3D34EA2224891800E97AA4 /* ModularArchTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModularArchTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B3D34F02224891800E97AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B96D4C62224B0610071BD20 /* UserSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewModelTests.swift; sourceTree = "<group>"; };
-		9B96D4CB2225CCFE0071BD20 /* TestScheduler+MarbleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestScheduler+MarbleTests.swift"; sourceTree = "<group>"; };
-		9B96D4ED222735A20071BD20 /* TestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoordinator.swift; sourceTree = "<group>"; };
-		9B96D4F1222749330071BD20 /* AssertThrowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertThrowable.swift; sourceTree = "<group>"; };
-		9B96D514222877800071BD20 /* UserProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModelTests.swift; sourceTree = "<group>"; };
-		9B96D51A22287DC50071BD20 /* profile_image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile_image.jpeg; sourceTree = "<group>"; };
-		9B96D526222A0FAA0071BD20 /* RepositoryDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,33 +78,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B1BDF35224FC79300F51375 /* MATKit.framework in Frameworks */,
-				9B1BDF3C224FC85100F51375 /* MATUI.framework in Frameworks */,
-				9B0A1818224F9BE200D458E9 /* Moya.framework in Frameworks */,
+				9B2A78C82254274D006BECDC /* MATUI.framework in Frameworks */,
+				9B2A78CA2254274E006BECDC /* MATKit.framework in Frameworks */,
 				9B0A1811224F0D2C00D458E9 /* RxAtomic.framework in Frameworks */,
-				9B0A181D224FA43600D458E9 /* Action.framework in Frameworks */,
 				9B0A1813224F0D2C00D458E9 /* RxSwift.framework in Frameworks */,
 				9B0A180D224F0D2C00D458E9 /* RxCocoa.framework in Frameworks */,
+				9B0A181D224FA43600D458E9 /* Action.framework in Frameworks */,
 				9B0A1815224F0D2C00D458E9 /* Result.framework in Frameworks */,
-				9B0A181F224FA56800D458E9 /* XCoordinator.framework in Frameworks */,
-				9B0A1819224F9BE200D458E9 /* RxMoya.framework in Frameworks */,
 				9B0A180B224F0D2C00D458E9 /* Alamofire.framework in Frameworks */,
 				9B0A1814224F0D2C00D458E9 /* AlamofireImage.framework in Frameworks */,
+				9B0A1818224F9BE200D458E9 /* Moya.framework in Frameworks */,
+				9B0A1819224F9BE200D458E9 /* RxMoya.framework in Frameworks */,
+				9B0A181F224FA56800D458E9 /* XCoordinator.framework in Frameworks */,
 				9B0A180E224F0D2C00D458E9 /* Rswift.framework in Frameworks */,
-				9B0A181B224F9C8B00D458E9 /* SnapKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B3D34E72224891800E97AA4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B0A1824224FAFA600D458E9 /* RxNimbleRxBlocking.framework in Frameworks */,
-				9B0A1826224FAFC300D458E9 /* RxBlocking.framework in Frameworks */,
-				9B0A1827224FAFC300D458E9 /* RxTest.framework in Frameworks */,
-				9B0A1820224FAC3F00D458E9 /* Nimble.framework in Frameworks */,
-				9B0A1821224FAC3F00D458E9 /* Quick.framework in Frameworks */,
-				9B0A1825224FAFA600D458E9 /* RxNimbleRxTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,11 +110,12 @@
 		9B0A17FF224F0CEB00D458E9 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
+				9B0A1806224F0D2C00D458E9 /* RxAtomic.framework */,
+				9B0A1808224F0D2C00D458E9 /* RxSwift.framework */,
 				9B0A1822224FAFA600D458E9 /* RxNimbleRxBlocking.framework */,
+				9B0A181C224FA43600D458E9 /* Action.framework */,
 				9B0A1823224FAFA600D458E9 /* RxNimbleRxTest.framework */,
 				9B0A181E224FA56800D458E9 /* XCoordinator.framework */,
-				9B0A181C224FA43600D458E9 /* Action.framework */,
-				9B0A181A224F9C8B00D458E9 /* SnapKit.framework */,
 				9B0A1816224F9BE200D458E9 /* Moya.framework */,
 				9B0A1817224F9BE200D458E9 /* RxMoya.framework */,
 				9B0A1800224F0D2C00D458E9 /* Alamofire.framework */,
@@ -173,10 +124,8 @@
 				9B0A1801224F0D2C00D458E9 /* Quick.framework */,
 				9B0A180A224F0D2C00D458E9 /* Result.framework */,
 				9B0A1803224F0D2C00D458E9 /* Rswift.framework */,
-				9B0A1806224F0D2C00D458E9 /* RxAtomic.framework */,
 				9B0A1804224F0D2C00D458E9 /* RxBlocking.framework */,
 				9B0A1802224F0D2C00D458E9 /* RxCocoa.framework */,
-				9B0A1808224F0D2C00D458E9 /* RxSwift.framework */,
 				9B0A1807224F0D2C00D458E9 /* RxTest.framework */,
 			);
 			name = Carthage;
@@ -187,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				9B3D34D82224891500E97AA4 /* ModularArchTest */,
-				9B3D34ED2224891800E97AA4 /* ModularArchTestTests */,
 				9B3D34D72224891500E97AA4 /* Products */,
 				5DC7DD50005B774F85DDDB11 /* Frameworks */,
 			);
@@ -197,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				9B3D34D62224891500E97AA4 /* ModularArchTest.app */,
-				9B3D34EA2224891800E97AA4 /* ModularArchTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,21 +154,10 @@
 			children = (
 				9B1BDF3E224FC86800F51375 /* Coordinator.swift */,
 				9B3D34D92224891500E97AA4 /* AppDelegate.swift */,
-				9B3D34F92224894700E97AA4 /* Support Files */,
 				9B1BDF4522529D7A00F51375 /* CoreModule.swift */,
+				9B3D34F92224894700E97AA4 /* Support Files */,
 			);
 			path = ModularArchTest;
-			sourceTree = "<group>";
-		};
-		9B3D34ED2224891800E97AA4 /* ModularArchTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				9B96D518222878510071BD20 /* ViewModels */,
-				9B96D4CA2225CCE30071BD20 /* TestKit */,
-				9B96D51922287D8C0071BD20 /* Resources */,
-				9B3D34F02224891800E97AA4 /* Info.plist */,
-			);
-			path = ModularArchTestTests;
 			sourceTree = "<group>";
 		};
 		9B3D34F92224894700E97AA4 /* Support Files */ = {
@@ -232,35 +168,6 @@
 				9B3D34E52224891800E97AA4 /* Info.plist */,
 			);
 			path = "Support Files";
-			sourceTree = "<group>";
-		};
-		9B96D4CA2225CCE30071BD20 /* TestKit */ = {
-			isa = PBXGroup;
-			children = (
-				9B1BDFC02252BDC300F51375 /* CallbackHandler.swift */,
-				9B96D4CB2225CCFE0071BD20 /* TestScheduler+MarbleTests.swift */,
-				9B96D4ED222735A20071BD20 /* TestCoordinator.swift */,
-				9B96D4F1222749330071BD20 /* AssertThrowable.swift */,
-			);
-			path = TestKit;
-			sourceTree = "<group>";
-		};
-		9B96D518222878510071BD20 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				9B96D526222A0FAA0071BD20 /* RepositoryDetailViewModelTests.swift */,
-				9B96D514222877800071BD20 /* UserProfileViewModelTests.swift */,
-				9B96D4C62224B0610071BD20 /* UserSearchViewModelTests.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		9B96D51922287D8C0071BD20 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9B96D51A22287DC50071BD20 /* profile_image.jpeg */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +182,7 @@
 				9B3D34D42224891500E97AA4 /* Resources */,
 				9B0A17FE224F0C2500D458E9 /* [Carthage] Copy Frameworks */,
 				65JVTYBC2VVHLNMTWIMWPI1G /* Carthage */,
-				9B1BDF3A224FC79300F51375 /* Embed Frameworks */,
+				9B2A78CC2254274E006BECDC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,24 +192,6 @@
 			productName = RadixChallenge;
 			productReference = 9B3D34D62224891500E97AA4 /* ModularArchTest.app */;
 			productType = "com.apple.product-type.application";
-		};
-		9B3D34E92224891800E97AA4 /* ModularArchTestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9B3D34F62224891800E97AA4 /* Build configuration list for PBXNativeTarget "ModularArchTestTests" */;
-			buildPhases = (
-				9B3D34E62224891800E97AA4 /* Sources */,
-				9B3D34E72224891800E97AA4 /* Frameworks */,
-				9B3D34E82224891800E97AA4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9B3D34EC2224891800E97AA4 /* PBXTargetDependency */,
-			);
-			name = ModularArchTestTests;
-			productName = RadixChallengeTests;
-			productReference = 9B3D34EA2224891800E97AA4 /* ModularArchTestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -316,10 +205,6 @@
 				TargetAttributes = {
 					9B3D34D52224891500E97AA4 = {
 						CreatedOnToolsVersion = 10.1;
-					};
-					9B3D34E92224891800E97AA4 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 9B3D34D52224891500E97AA4;
 					};
 				};
 			};
@@ -337,7 +222,6 @@
 			projectRoot = "";
 			targets = (
 				9B3D34D52224891500E97AA4 /* ModularArchTest */,
-				9B3D34E92224891800E97AA4 /* ModularArchTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -349,14 +233,6 @@
 			files = (
 				9B3D34E42224891800E97AA4 /* LaunchScreen.storyboard in Resources */,
 				9B3D34E12224891800E97AA4 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B3D34E82224891800E97AA4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B96D51B22287DC50071BD20 /* profile_image.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,29 +291,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B3D34E62224891800E97AA4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B96D4F2222749330071BD20 /* AssertThrowable.swift in Sources */,
-				9B1BDFC12252BDC300F51375 /* CallbackHandler.swift in Sources */,
-				9B96D4EE222735A20071BD20 /* TestCoordinator.swift in Sources */,
-				9B96D4C72224B0610071BD20 /* UserSearchViewModelTests.swift in Sources */,
-				9B96D4CC2225CCFF0071BD20 /* TestScheduler+MarbleTests.swift in Sources */,
-				9B96D515222877800071BD20 /* UserProfileViewModelTests.swift in Sources */,
-				9B96D527222A0FAB0071BD20 /* RepositoryDetailViewModelTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9B3D34EC2224891800E97AA4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9B3D34D52224891500E97AA4 /* ModularArchTest */;
-			targetProxy = 9B3D34EB2224891800E97AA4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9B3D34E22224891800E97AA4 /* LaunchScreen.storyboard */ = {
@@ -611,58 +465,6 @@
 			};
 			name = Release;
 		};
-		9B3D34F72224891800E97AA4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PNRHBB5S44;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = ModularArchTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-					"$(SRCROOT)/Carthage/Build/iOS",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = gvergara.ModularArchTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModularArchTest.app/ModularArchTest";
-			};
-			name = Debug;
-		};
-		9B3D34F82224891800E97AA4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PNRHBB5S44;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = ModularArchTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-					"$(SRCROOT)/Carthage/Build/iOS",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = gvergara.ModularArchTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModularArchTest.app/ModularArchTest";
-			};
-			name = Release;
-		};
 		9B96D4F3222753E20071BD20 /* Debug InjectionIII */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -747,32 +549,6 @@
 			};
 			name = "Debug InjectionIII";
 		};
-		9B96D4F5222753E20071BD20 /* Debug InjectionIII */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PNRHBB5S44;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = ModularArchTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-					"$(SRCROOT)/Carthage/Build/iOS",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = gvergara.ModularArchTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModularArchTest.app/ModularArchTest";
-			};
-			name = "Debug InjectionIII";
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -792,16 +568,6 @@
 				9B3D34F42224891800E97AA4 /* Debug */,
 				9B96D4F4222753E20071BD20 /* Debug InjectionIII */,
 				9B3D34F52224891800E97AA4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9B3D34F62224891800E97AA4 /* Build configuration list for PBXNativeTarget "ModularArchTestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B3D34F72224891800E97AA4 /* Debug */,
-				9B96D4F5222753E20071BD20 /* Debug InjectionIII */,
-				9B3D34F82224891800E97AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

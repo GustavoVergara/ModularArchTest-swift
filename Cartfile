@@ -1,14 +1,12 @@
 github "Alamofire/Alamofire" ~> 4.8
 github "Alamofire/AlamofireImage"
 
-github "ReactiveX/RxSwift" "4.4.2"
+github "ReactiveX/RxSwift" ~> 4.5
 github "RxSwiftCommunity/Action" ~> 3.11
 
-github "Moya/Moya" "develop"
+github "Moya/Moya" "12.0.1"
 
 github "quickbirdstudios/XCoordinator"
-
-github "SnapKit/SnapKit"
 
 github "mac-cain13/R.swift.Library"
 

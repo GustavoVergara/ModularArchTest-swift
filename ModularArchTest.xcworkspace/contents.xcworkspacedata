@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ModularArchTest.xcodeproj">
+      location = "group:/Users/gustavovergaragarcia/Documents/Workspace/iOS Projects/ModularArchTest-swift/MAT.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:MATKit/MATKit.xcodeproj">

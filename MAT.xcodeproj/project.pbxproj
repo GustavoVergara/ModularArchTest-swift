@@ -66,7 +66,8 @@
 		9B1BDF33224FC78500F51375 /* MATUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MATUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B1BDF3E224FC86800F51375 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9B1BDF4522529D7A00F51375 /* CoreModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModule.swift; sourceTree = "<group>"; };
-		9B3D34D62224891500E97AA4 /* ModularArchTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModularArchTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B2A78D8225432AF006BECDC /* Cartfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Cartfile; sourceTree = "<group>"; };
+		9B3D34D62224891500E97AA4 /* MAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B3D34D92224891500E97AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B3D34E02224891800E97AA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B3D34E32224891800E97AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -135,7 +136,8 @@
 		9B3D34CD2224891500E97AA4 = {
 			isa = PBXGroup;
 			children = (
-				9B3D34D82224891500E97AA4 /* ModularArchTest */,
+				9B2A78D8225432AF006BECDC /* Cartfile */,
+				9B3D34D82224891500E97AA4 /* MAT */,
 				9B3D34D72224891500E97AA4 /* Products */,
 				5DC7DD50005B774F85DDDB11 /* Frameworks */,
 			);
@@ -144,12 +146,12 @@
 		9B3D34D72224891500E97AA4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B3D34D62224891500E97AA4 /* ModularArchTest.app */,
+				9B3D34D62224891500E97AA4 /* MAT.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9B3D34D82224891500E97AA4 /* ModularArchTest */ = {
+		9B3D34D82224891500E97AA4 /* MAT */ = {
 			isa = PBXGroup;
 			children = (
 				9B1BDF3E224FC86800F51375 /* Coordinator.swift */,
@@ -157,7 +159,7 @@
 				9B1BDF4522529D7A00F51375 /* CoreModule.swift */,
 				9B3D34F92224894700E97AA4 /* Support Files */,
 			);
-			path = ModularArchTest;
+			path = MAT;
 			sourceTree = "<group>";
 		};
 		9B3D34F92224894700E97AA4 /* Support Files */ = {
@@ -173,24 +175,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9B3D34D52224891500E97AA4 /* ModularArchTest */ = {
+		9B3D34D52224891500E97AA4 /* MAT */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B3D34F32224891800E97AA4 /* Build configuration list for PBXNativeTarget "ModularArchTest" */;
+			buildConfigurationList = 9B3D34F32224891800E97AA4 /* Build configuration list for PBXNativeTarget "MAT" */;
 			buildPhases = (
 				9B3D34D22224891500E97AA4 /* Sources */,
 				9B3D34D32224891500E97AA4 /* Frameworks */,
 				9B3D34D42224891500E97AA4 /* Resources */,
-				9B0A17FE224F0C2500D458E9 /* [Carthage] Copy Frameworks */,
 				65JVTYBC2VVHLNMTWIMWPI1G /* Carthage */,
 				9B2A78CC2254274E006BECDC /* Embed Frameworks */,
+				9B2A78DA2254FE64006BECDC /* Check for outdated dependencies */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ModularArchTest;
+			name = MAT;
 			productName = RadixChallenge;
-			productReference = 9B3D34D62224891500E97AA4 /* ModularArchTest.app */;
+			productReference = 9B3D34D62224891500E97AA4 /* MAT.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -208,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9B3D34D12224891500E97AA4 /* Build configuration list for PBXProject "ModularArchTest" */;
+			buildConfigurationList = 9B3D34D12224891500E97AA4 /* Build configuration list for PBXProject "MAT" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -221,7 +223,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B3D34D52224891500E97AA4 /* ModularArchTest */,
+				9B3D34D52224891500E97AA4 /* MAT */,
 			);
 		};
 /* End PBXProject section */
@@ -257,10 +259,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 			showEnvVarsInLog = 0;
 		};
-		9B0A17FE224F0C2500D458E9 /* [Carthage] Copy Frameworks */ = {
+		9B2A78DA2254FE64006BECDC /* Check for outdated dependencies */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,14 +271,14 @@
 			);
 			inputPaths = (
 			);
-			name = "[Carthage] Copy Frameworks";
+			name = "Check for outdated dependencies";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# \"$SRCROOT/carttool\" copy-frameworks\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage outdated --xcode-warnings\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -431,7 +433,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/ModularArchTest/Support Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MAT/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,7 +455,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/ModularArchTest/Support Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MAT/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -537,7 +539,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/ModularArchTest/Support Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MAT/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -552,7 +554,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9B3D34D12224891500E97AA4 /* Build configuration list for PBXProject "ModularArchTest" */ = {
+		9B3D34D12224891500E97AA4 /* Build configuration list for PBXProject "MAT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B3D34F12224891800E97AA4 /* Debug */,
@@ -562,7 +564,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B3D34F32224891800E97AA4 /* Build configuration list for PBXNativeTarget "ModularArchTest" */ = {
+		9B3D34F32224891800E97AA4 /* Build configuration list for PBXNativeTarget "MAT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B3D34F42224891800E97AA4 /* Debug */,

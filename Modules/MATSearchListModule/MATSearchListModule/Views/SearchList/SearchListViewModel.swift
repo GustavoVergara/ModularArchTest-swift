@@ -74,9 +74,9 @@ public class SearchListViewModel: ViewModelType {
             .asSignal(onErrorSignalWith: .empty())
         
         selectUserAction.elements
-            .subscribe(onNext: { (repositories) in
-                guard let owner = repositories.first?.owner else { return }
-                router.trigger(.userProfile(user: owner, repositories: repositories))
+            .withLatestFrom(selectUserAction.inputs, resultSelector: { ($1, $0) })
+            .subscribe(onNext: { (user, repositories) in
+                router.trigger(.userProfile(user: user, repositories: repositories))
             })
             .disposed(by: self.disposeBag)
         

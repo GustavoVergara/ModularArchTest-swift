@@ -61,8 +61,11 @@ public class UserSearchViewModel: ViewModelType {
             .asSignal(onErrorSignalWith: .empty())
         
         searchAction.elements
-            .subscribe(onNext: { (repositories) in
-                guard let owner = repositories.first?.owner else { return }
+            .withLatestFrom(searchAction.inputs, resultSelector: { ($1, $0) })
+            .subscribe(onNext: { (login, repositories) in
+                guard let owner = repositories.first(where: { $0.owner.login == login })?.owner ?? repositories.first?.owner else {
+                    return
+                }
                 router.trigger(.userProfile(user: owner, repositories: repositories))
             })
             .disposed(by: self.disposeBag)

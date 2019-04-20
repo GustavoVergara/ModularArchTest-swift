@@ -30,11 +30,16 @@ public class SearchListViewModel: ViewModelType {
         
         let selectUserAction = Action<User, [Repository]>(workFactory: { (user) -> Observable<[Repository]> in
             return gitHubAPI.getRepositories(ownerUsername: user.login)
-                .flatMap({ (repositories) -> Single<[Repository]> in
-                    guard repositories.isEmpty == false else {
-                        return .error(Error.userDoesNotHaveAnyRepository)
+                .catchError({ (apiError) -> PrimitiveSequence<SingleTrait, [Repository]> in
+                    guard let error = apiError as? MoyaError else {
+                        return .error(apiError)
                     }
-                    return .just(repositories)
+                    switch error {
+                    case .statusCode(let response) where response.statusCode == 404:
+                        return .error(Error.loginNotFound)
+                    default:
+                        return .error(apiError)
+                    }
                 })
                 .asObservable()
         })
@@ -55,21 +60,14 @@ public class SearchListViewModel: ViewModelType {
             }
             .asDriver(onErrorJustReturn: [:])
         
-        let errorSignal = searchAction.errors
+        let errorSignal = Observable.merge(searchAction.errors, selectUserAction.errors)
             .map({ (actionError) -> Error in
                 switch actionError.underlying {
                 case let error as Error:
                     return error
-                case let error as MoyaError:
-                    switch error {
-                    case .statusCode(let response) where response.statusCode == 404:
-                        return .loginNotFound
-                    default: break
-                    }
-                default: break
+                default:
+                    return .unhandledError
                 }
-                // default
-                return .unhandledError
             })
             .asSignal(onErrorSignalWith: .empty())
         
@@ -145,10 +143,8 @@ public class SearchListViewModel: ViewModelType {
     // MARK: -
     
     public enum Error: Swift.Error, Equatable {
-        case loginIsEmpty
         case loginNotFound
         case unhandledError
-        case userDoesNotHaveAnyRepository
     }
     
 }

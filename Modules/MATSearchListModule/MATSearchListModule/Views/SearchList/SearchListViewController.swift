@@ -11,7 +11,7 @@ import MATKit
 import RxSwift
 import RxCocoa
 
-class SearchListViewController: UIViewController, UISearchControllerDelegate, ViewModelBindable {
+class SearchListViewController: UIViewController, ViewModelBindable {
     
     // MARK: - Outlets
     
@@ -101,33 +101,18 @@ class SearchListViewController: UIViewController, UISearchControllerDelegate, Vi
             return cell
         }).disposed(by: disposeBag)
         
+        viewModel.output.error
+            .emit(onNext: { [weak self] (error) in
+                switch error {
+                case .loginNotFound:
+                    self?.utils.presentAlert(title: "Nome de usuário não pode estar vazio.")
+                case .unhandledError:
+                    self?.utils.presentAlert(title: "Erro inesperado.")
+                }
+            })
+            .disposed(by: disposeBag)
+        
         self.disposeBag = disposeBag
     }
-    
-    // MARK: - UISearchController Delegate
-    
-//    // These methods are called when automatic presentation or dismissal occurs. They will not be called if you present or dismiss the search controller yourself.
-//    func willPresentSearchController(_ searchController: UISearchController) {
-//
-//    }
-//
-//    func didPresentSearchController(_ searchController: UISearchController) {
-//
-//    }
-//
-//    func willDismissSearchController(_ searchController: UISearchController) {
-//
-//    }
-//
-//    func didDismissSearchController(_ searchController: UISearchController) {
-//
-//    }
-    
-    
-    // Called after the search controller's search bar has agreed to begin editing or when 'active' is set to YES. If you choose not to present the controller yourself or do not implement this method, a default presentation is performed on your behalf.
-    func presentSearchController(_ searchController: UISearchController) {
-
-    }
-
     
 }

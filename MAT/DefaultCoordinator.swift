@@ -1,5 +1,5 @@
 //
-//  Coordinator.swift
+//  DefaultCoordinator.swift
 //  MATUI
 //
 //  Created by Gustavo Vergara Garcia on 30/03/19.
@@ -10,7 +10,7 @@ import Foundation
 import MATKit
 import XCoordinator
 
-public class AppCoordinator: NavigationCoordinator<AppRoute> {
+public class DefaultCoordinator: NavigationCoordinator<AppRoute> {
     
     let modules: [Module]
     
@@ -34,7 +34,10 @@ public class AppCoordinator: NavigationCoordinator<AppRoute> {
     }
     
     public override func prepareTransition(for route: AppRoute) -> NavigationTransition {
-        guard let destination = self.destination(for: route) else { return .none() }
+        guard let destination = self.destination(for: route) else {
+            assertionFailure("Destination for route \"\(route)\" not found")
+            return .none()
+        }
         
         switch route {
         case .userSearch:

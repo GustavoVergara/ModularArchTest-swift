@@ -9,15 +9,14 @@
 import UIKit
 import MATUI
 
-@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     static var shared: AppDelegate! {
         return UIApplication.shared.delegate as? AppDelegate
     }
-
+    
     var window: UIWindow? = UIWindow()
-    let coordinator = AppCoordinator(modules: [CoreModule(), UIModule()])
+    let coordinator = TargetContainer.target.mainCoordinator
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         self.window.map(self.coordinator.setRoot)

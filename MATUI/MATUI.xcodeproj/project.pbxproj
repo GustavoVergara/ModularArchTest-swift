@@ -269,9 +269,9 @@
 		9B1BDE81224FBA6600F51375 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9B1BDE82224FBA6600F51375 /* RepositoryDetail */,
 				9B1BDE86224FBA6600F51375 /* UserSearch */,
 				9B1BDE8A224FBA6600F51375 /* UserProfile */,
+				9B1BDE82224FBA6600F51375 /* RepositoryDetail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,6 +423,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 9B1BDE4C224FB74100F51375;
 			productRefGroup = 9B1BDE57224FB74100F51375 /* Products */;
@@ -668,6 +669,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gvergara.MATUI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -697,6 +699,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gvergara.MATUI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

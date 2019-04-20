@@ -14,6 +14,8 @@ import Alamofire
 
 public struct GitHubAPI {
     
+    let githubJSONDecoder = JSONDecoder(dateDecodingStrategy: .iso8601(formatOptions: .withInternetDateTime))
+    
     let gitHubProvider: MoyaProvider<GitHubTarget>
     
     public init(
@@ -24,17 +26,20 @@ public struct GitHubAPI {
 
     public func getRepositories(ownerUsername: String?, type: RepoType = .all, sort: RepoSortType = .updated, order: SortOrder = .desc) -> Single<[Repository]> {
         return self.gitHubProvider.rx.request(.getRepositories(ownerUsername: ownerUsername, type: type, sort: sort, order: order))
-            .catchError({ (error) -> Single<Response> in
-                return Single.error(error)
-            })
             .filterSuccessfulStatusAndRedirectCodes()
-            .map([Repository].self, using: JSONDecoder(dateDecodingStrategy: .iso8601(formatOptions: .withInternetDateTime)))
+            .map([Repository].self, using: self.githubJSONDecoder)
     }
     
     public func searchIssues(repositoryFullName: String, state: Issue.State? = nil, sort: SearchIssuesSortType = .updated, order: SortOrder = .desc) -> Single<SearchResult<Issue>> {
         return self.gitHubProvider.rx.request(.searchIssues(repository: repositoryFullName, state: state, sort: sort, order: order))
             .filterSuccessfulStatusAndRedirectCodes()
-            .map(SearchResult<Issue>.self, using: JSONDecoder(dateDecodingStrategy: .iso8601(formatOptions: .withInternetDateTime)))
+            .map(SearchResult<Issue>.self, using: self.githubJSONDecoder)
+    }
+    
+    public func searchUsers(login: String, sort: SearchUsersSortType? = nil, order: SortOrder = .desc) -> Single<SearchResult<User>> {
+        return self.gitHubProvider.rx.request(.searchUsers(login: login, sort: sort, order: order))
+            .filterSuccessfulStatusAndRedirectCodes()
+            .map(SearchResult<User>.self, using: self.githubJSONDecoder)
     }
     
 }

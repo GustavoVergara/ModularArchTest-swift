@@ -2,6 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Cartfile"
+      assignedFileDataType = "public.ruby-script">
+   </FileRef>
+   <FileRef
       location = "group:/Users/gustavovergaragarcia/Documents/Workspace/iOS Projects/ModularArchTest-swift/MAT.xcodeproj">
    </FileRef>
    <FileRef
@@ -10,4 +14,11 @@
    <FileRef
       location = "group:MATUI/MATUI.xcodeproj">
    </FileRef>
+   <Group
+      location = "container:Modules"
+      name = "Modules">
+      <FileRef
+         location = "group:MATSearchListModule/MATSearchListModule.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>

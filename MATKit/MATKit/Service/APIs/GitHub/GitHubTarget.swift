@@ -13,6 +13,7 @@ import Alamofire
 public enum GitHubTarget: TargetType {
     case getRepositories(ownerUsername: String?, type: RepoType, sort: RepoSortType, order: SortOrder)
     case searchIssues(repository: String, state: Issue.State?, sort: SearchIssuesSortType, order: SortOrder)
+    case searchUsers(login: String, sort: SearchUsersSortType?, order: SortOrder)
     
     /// The target's base `URL`.
     public var baseURL: URL {
@@ -30,6 +31,8 @@ public enum GitHubTarget: TargetType {
             }
         case .searchIssues:
             return "/search/issues"
+        case .searchUsers:
+            return "/search/users"
         }
     }
     
@@ -38,6 +41,7 @@ public enum GitHubTarget: TargetType {
         switch self {
         case .getRepositories:  return .get
         case .searchIssues:     return .get
+        case .searchUsers:      return .get
         }
     }
     
@@ -46,6 +50,7 @@ public enum GitHubTarget: TargetType {
         switch self {
         case .getRepositories:  return GitHubMocks.getRepositories()
         case .searchIssues:     return GitHubMocks.searchIssues()
+        case .searchUsers:      return Data()
         }
     }
     
@@ -72,6 +77,15 @@ public enum GitHubTarget: TargetType {
                 ],
                 encoding: URLEncoding.default
             )
+        case let .searchUsers(login, sort, order):
+            return .requestParameters(
+                parameters: [
+                    "q": login /*+ " " + gitHubQueryString(from: <#T##[String : String]#>)*/,
+                    "sort": sort?.rawValue as Any,
+                    "order": order.rawValue
+                ],
+                encoding: URLEncoding.default
+            )
         }
     }
     
@@ -80,6 +94,7 @@ public enum GitHubTarget: TargetType {
         switch self {
         case .getRepositories:  return nil
         case .searchIssues:     return nil
+        case .searchUsers:      return nil
         }
     }
     
@@ -121,7 +136,7 @@ public enum ProgrammingLanguage: String {
     case swift = "Swift"
 }
 
-public enum SortField: String {
+public enum SearchReposSortField: String {
     case stars
     case forks
     case updated
@@ -142,3 +157,17 @@ public enum SearchIssuesSortType: String {
     case created
     case updated
 }
+
+// MARK: - Search Users Parameters
+
+public enum SearchUsersSortType: String {
+    case followers
+    case repositories
+    case joined
+}
+
+//public enum SearchUsersField: String {
+//    case login
+//    case fullname
+//    case email
+//}

@@ -40,7 +40,6 @@
 		9B1BDF23224FBF3300F51375 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF04224FBF3300F51375 /* User.swift */; };
 		9B1BDF24224FBF3300F51375 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF05224FBF3300F51375 /* Issue.swift */; };
 		9B1BDF25224FBF3300F51375 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF06224FBF3300F51375 /* Repository.swift */; };
-		9B1BDF442252961600F51375 /* OptionalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF432252961600F51375 /* OptionalCoordinator.swift */; };
 		9B1BE022225303C800F51375 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BE021225303C800F51375 /* Module.swift */; };
 		9B2A78092253F06B006BECDC /* CallbackHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A78082253F06B006BECDC /* CallbackHandler.swift */; };
 		9B2A7866225413D8006BECDC /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2A7854225413D7006BECDC /* Moya.framework */; };
@@ -84,6 +83,8 @@
 		9B2A78B3225415F6006BECDC /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A78B2225415F6006BECDC /* APIError.swift */; };
 		9B2A78CD22542F9B006BECDC /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2A785B225413D7006BECDC /* RxTest.framework */; };
 		9B2A78CE22542F9B006BECDC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2A785E225413D7006BECDC /* RxBlocking.framework */; };
+		9B8ECB70225C3A3900663A4F /* ImageTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8ECB6F225C3A3900663A4F /* ImageTarget.swift */; };
+		9B8ECB72225C3C6800663A4F /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8ECB71225C3C6800663A4F /* ImageAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,7 +160,6 @@
 		9B1BDF04224FBF3300F51375 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9B1BDF05224FBF3300F51375 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		9B1BDF06224FBF3300F51375 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		9B1BDF432252961600F51375 /* OptionalCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalCoordinator.swift; sourceTree = "<group>"; };
 		9B1BE021225303C800F51375 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Module.swift; path = MATKit/Kit/Module.swift; sourceTree = SOURCE_ROOT; };
 		9B2A78082253F06B006BECDC /* CallbackHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallbackHandler.swift; sourceTree = "<group>"; };
 		9B2A7854225413D7006BECDC /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Moya.framework; sourceTree = "<group>"; };
@@ -179,6 +179,8 @@
 		9B2A7864225413D7006BECDC /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxAtomic.framework; sourceTree = "<group>"; };
 		9B2A7865225413D7006BECDC /* RxNimbleRxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxNimbleRxBlocking.framework; sourceTree = "<group>"; };
 		9B2A78B2225415F6006BECDC /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		9B8ECB6F225C3A3900663A4F /* ImageTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTarget.swift; sourceTree = "<group>"; };
+		9B8ECB71225C3C6800663A4F /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +396,7 @@
 		9B1BDEFA224FBF3300F51375 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
+				9B8ECB6E225C3A2400663A4F /* Image */,
 				9B1BDEFB224FBF3300F51375 /* GitHub */,
 			);
 			path = APIs;
@@ -435,7 +438,6 @@
 			isa = PBXGroup;
 			children = (
 				9B1BDEDF224FBF3300F51375 /* AppRoute.swift */,
-				9B1BDF432252961600F51375 /* OptionalCoordinator.swift */,
 				9B1BE021225303C800F51375 /* Module.swift */,
 			);
 			path = XCoordinator;
@@ -471,6 +473,15 @@
 			);
 			name = Carthage;
 			path = ../Carthage/Build/iOS;
+			sourceTree = "<group>";
+		};
+		9B8ECB6E225C3A2400663A4F /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				9B8ECB71225C3C6800663A4F /* ImageAPI.swift */,
+				9B8ECB6F225C3A3900663A4F /* ImageTarget.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -605,17 +616,18 @@
 				9B1BDF0B224FBF3300F51375 /* AppRoute.swift in Sources */,
 				9B1BDF0C224FBF3300F51375 /* ViewModelBindable.swift in Sources */,
 				9B1BDF18224FBF3300F51375 /* RxOptionalError.swift in Sources */,
+				9B8ECB72225C3C6800663A4F /* ImageAPI.swift in Sources */,
 				9B1BDF0A224FBF3300F51375 /* LoadingOverlayView.swift in Sources */,
 				9B1BDF11224FBF3300F51375 /* DataResponse+Rx.swift in Sources */,
 				9B1BDF20224FBF3300F51375 /* PullRequest.swift in Sources */,
 				9B1BDF09224FBF3300F51375 /* Rx+LoadingOverlayView.swift in Sources */,
+				9B8ECB70225C3A3900663A4F /* ImageTarget.swift in Sources */,
 				9B1BDF0D224FBF3300F51375 /* ViewModelType.swift in Sources */,
 				9B1BDF1B224FBF3300F51375 /* SharedSequence+Optional.swift in Sources */,
 				9B1BDF0E224FBF3300F51375 /* UtilsWrapper.swift in Sources */,
 				9B1BDF1A224FBF3300F51375 /* OptionalType.swift in Sources */,
 				9B1BDF1D224FBF3300F51375 /* GitHubAPI.swift in Sources */,
 				9B1BDF14224FBF3300F51375 /* ActionType.swift in Sources */,
-				9B1BDF442252961600F51375 /* OptionalCoordinator.swift in Sources */,
 				9B1BDF15224FBF3300F51375 /* ActionExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,6 +794,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gvergara.MATKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -808,6 +821,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gvergara.MATKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

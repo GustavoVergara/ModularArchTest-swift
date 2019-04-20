@@ -9,7 +9,7 @@
 import Foundation
 import XCoordinator
 
-public enum AppRoute: Route, Equatable {
+public enum AppRoute: Route, Hashable {
     case userSearch
     case userProfile(user: User, repositories: [Repository])
     case repoDetail(Repository)

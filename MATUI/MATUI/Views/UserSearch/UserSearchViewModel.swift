@@ -16,8 +16,6 @@ import Moya
 
 public class UserSearchViewModel: ViewModelType {
     
-//    private var actions: [ActionType] = []
-    
     private let disposeBag = DisposeBag()
 
     public init(router: AnyRouter<AppRoute>, gitHubAPI: GitHubAPI = GitHubAPI()) {
@@ -33,10 +31,6 @@ public class UserSearchViewModel: ViewModelType {
                     return .just(repositories)
                 })
                 .asObservable()
-//                .do(onNext: { (repositories) in
-//                    guard let onwer = repositories.first?.owner else { return }
-//                    router.trigger(.userProfile(user: onwer, repositories: repositories))
-//                })
         })
         Disposables.createStrongReferenceTo(searchAction).disposed(by: self.disposeBag)
         

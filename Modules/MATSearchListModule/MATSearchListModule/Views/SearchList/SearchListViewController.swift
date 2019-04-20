@@ -84,9 +84,15 @@ class SearchListViewController: UIViewController, UISearchControllerDelegate, Vi
             cell.detailTextLabel?.text = String(user.id)
             cell.detailTextLabel?.textColor = .darkGray
             if let imageView = cell.imageView {
-                viewModel.output.avatarURL(for: user)
+                Driver<UIImage>.just(R.image.github_octocat()!)
+                    .concat(viewModel.output.avatar(for: user))
+                    .map({ $0
+                        .af_imageScaled(to: CGSize(width: 44, height: 44))
+                        .af_imageRoundedIntoCircle()
+                    })
                     .drive(imageView.rx.image)
                     .disposed(by: disposeBag)
+                
                 viewModel.output.isGettingImage(for: user)
                     .drive(imageView.rx.hasLoadingOverlay)
                     .disposed(by: disposeBag)

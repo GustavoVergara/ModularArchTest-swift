@@ -16,16 +16,10 @@ import Moya
 
 public class SearchListViewModel: ViewModelType {
     
-    //    private var actions: [ActionType] = []
-    
     private let disposeBag = DisposeBag()
     
     public init(router: AnyRouter<AppRoute>, gitHubAPI: GitHubAPI = GitHubAPI(), imageAPI: ImageAPI = ImageAPI()) {
         let searchAction = Action<String?, [User]>(workFactory: { (login) in
-//            guard let login = login, login.isEmpty == false else {
-//                return .error(Error.loginIsEmpty)
-//            }
-            
             return gitHubAPI.searchUsers(login: login ?? "")
                 .map({ $0.items })
                 .asObservable()
@@ -93,7 +87,7 @@ public class SearchListViewModel: ViewModelType {
             isSearchingUsers: isSearchingUsersDriver,
             users: searchAction.elements.asDriver(onErrorJustReturn: []),
             isSearchingRepositories: isSearchingRepositoriesDriver,
-            images: imagesDriver,
+            avatars: imagesDriver,
             error: errorSignal
         )
     }
@@ -112,7 +106,7 @@ public class SearchListViewModel: ViewModelType {
         public var isSearchingUsers: Driver<Bool>
         public var users: Driver<[User]>
         public var isSearchingRepositories: Driver<Bool>
-        public var images: Driver<[URL: RxImage]>
+        public var avatars: Driver<[URL: RxImage]>
         public var error: Signal<Error>
         
         public var isSearching: Driver<Bool> {
@@ -123,9 +117,20 @@ public class SearchListViewModel: ViewModelType {
             )
         }
         
-        public func avatarURL(for user: User) -> Driver<UIImage> {
+        public func avatar(for url: URL) -> Driver<UIImage> {
+            return self.avatars
+                .map({ $0[url]?.image ?? .empty() })
+                .flatMap({ $0.asDriver(onErrorDriveWith: .empty()) })
+        }
+        
+        public func avatar(for user: User) -> Driver<UIImage> {
             guard let avatarURL = user.avatarURL else { return .empty() }
-            return self.image(for: avatarURL)
+            return self.avatar(for: avatarURL)
+        }
+        
+        public func isGettingImage(with url: URL)  -> Driver<Bool> {
+            return self.avatars.map({ $0[url]?.isGettingImage ?? .just(false) })
+                .flatMap({ $0.asDriver(onErrorJustReturn: false) })
         }
         
         public func isGettingImage(for user: User) -> Driver<Bool> {
@@ -133,17 +138,6 @@ public class SearchListViewModel: ViewModelType {
             return self.isGettingImage(with: avatarURL)
         }
         
-        public func image(for url: URL) -> Driver<UIImage> {
-            return self.images.flatMap({
-                $0[url]?.image.asDriver(onErrorDriveWith: .empty()) ?? .empty()
-            })
-        }
-        
-        public func isGettingImage(with url: URL)  -> Driver<Bool> {
-            return self.images.flatMap({
-                $0[url]?.isGettingImage.asDriver(onErrorJustReturn: false) ?? Driver.just(false)
-            })
-        }
     }
     
     // MARK: -

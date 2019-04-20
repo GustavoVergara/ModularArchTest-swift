@@ -17,7 +17,7 @@ class SearchListViewController: UIViewController, ViewModelBindable {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let searchBar = UISearchBar()//(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 44)))
+    let searchBar = UISearchBar()
     
     // MARK: - Properties
     
@@ -84,12 +84,12 @@ class SearchListViewController: UIViewController, ViewModelBindable {
             cell.detailTextLabel?.text = String(user.id)
             cell.detailTextLabel?.textColor = .darkGray
             if let imageView = cell.imageView {
+                let imageSize = CGSize(width: 44, height: 44)
+                imageView.layer.cornerRadius = imageSize.width / 2
+                imageView.clipsToBounds = true
                 Driver<UIImage>.just(R.image.github_octocat()!)
                     .concat(viewModel.output.avatar(for: user))
-                    .map({ $0
-                        .af_imageScaled(to: CGSize(width: 44, height: 44))
-                        .af_imageRoundedIntoCircle()
-                    })
+                    .map({ $0 .af_imageScaled(to: imageSize) })
                     .drive(imageView.rx.image)
                     .disposed(by: disposeBag)
                 

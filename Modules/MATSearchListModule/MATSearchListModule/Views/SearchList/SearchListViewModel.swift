@@ -49,7 +49,7 @@ public class SearchListViewModel: ViewModelType {
                 var images = [URL: RxImage]()
                 for user in users {
                     guard let avatarURL = user.avatarURL else { continue }
-                    images[avatarURL] = RxImage(url: avatarURL, action: imageAPI.action)
+                    images[avatarURL] = RxImage(input: avatarURL, action: imageAPI.action)
                 }
                 return images
             }
@@ -121,7 +121,7 @@ public class SearchListViewModel: ViewModelType {
         
         public func avatar(for url: URL) -> Driver<UIImage> {
             return self.avatars
-                .map({ $0[url]?.image ?? .empty() })
+                .map({ $0[url]?.resource ?? .empty() })
                 .flatMap({ $0.asDriver(onErrorDriveWith: .empty()) })
         }
         
@@ -131,7 +131,7 @@ public class SearchListViewModel: ViewModelType {
         }
         
         public func isGettingImage(with url: URL)  -> Driver<Bool> {
-            return self.avatars.map({ $0[url]?.isGettingImage ?? .just(false) })
+            return self.avatars.map({ $0[url]?.isGettingResource ?? .just(false) })
                 .flatMap({ $0.asDriver(onErrorJustReturn: false) })
         }
         
@@ -151,27 +151,4 @@ public class SearchListViewModel: ViewModelType {
         case userDoesNotHaveAnyRepository
     }
     
-}
-
-public struct RxImage {
-    let image: Observable<UIImage>
-    let isGettingImage: Observable<Bool>
-    
-    private let disposeBag = DisposeBag()
-    
-    init(image: UIImage) {
-        self.image = Observable.just(image)
-        self.isGettingImage = Observable.just(false)
-    }
-    
-    init(imageObservable: Observable<UIImage>, isGettingImage: Observable<Bool>) {
-        self.image = imageObservable
-        self.isGettingImage = isGettingImage
-    }
-    
-    init(url: URL, action: Action<URL, UIImage>) {
-        self.image = Observable.deferred({ action.execute(url) }).share(replay: 1, scope: .forever)
-        self.isGettingImage = action.executing
-        Disposables.createStrongReferenceTo(action).disposed(by: self.disposeBag)
-    }
 }

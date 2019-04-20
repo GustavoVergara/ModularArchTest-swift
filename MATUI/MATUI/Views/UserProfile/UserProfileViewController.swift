@@ -30,7 +30,7 @@ public class UserProfileViewController: UIViewController, UITableViewDataSource,
     // MARK: - Contructors
     
     public init() {
-        super.init(nibName: R.nib.userProfileViewController.name, bundle: R.nib.userProfileViewController.bundle)
+        super.init(nibName: "UserProfileViewController", bundle: Bundle(for: UserProfileViewController.self))
     }
     
     public required init?(coder aDecoder: NSCoder) {

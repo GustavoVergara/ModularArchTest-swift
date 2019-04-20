@@ -32,8 +32,6 @@
 		9B1BDEA9224FBAF600F51375 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDEA0224FBA9E00F51375 /* RxCocoa.framework */; };
 		9B1BDEAA224FBAF600F51375 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDEA2224FBA9E00F51375 /* RxSwift.framework */; };
 		9B1BDF27224FBF5200F51375 /* MATKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDF26224FBF5200F51375 /* MATKit.framework */; };
-		9B1BDF2D224FC58800F51375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B1BDF2C224FC58800F51375 /* Assets.xcassets */; };
-		9B1BDF30224FC73100F51375 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF2F224FC73100F51375 /* R.generated.swift */; };
 		9B1BDF41225053F100F51375 /* UIModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF40225053F100F51375 /* UIModule.swift */; };
 		9B2A789C22541410006BECDC /* RxNimbleRxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDEAE224FBB1200F51375 /* RxNimbleRxTest.framework */; };
 		9B2A789D22541410006BECDC /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1BDEAC224FBB1200F51375 /* Nimble.framework */; };
@@ -141,8 +139,6 @@
 		9B1BDEAD224FBB1200F51375 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
 		9B1BDEAE224FBB1200F51375 /* RxNimbleRxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxNimbleRxTest.framework; sourceTree = "<group>"; };
 		9B1BDF26224FBF5200F51375 /* MATKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MATKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B1BDF2C224FC58800F51375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9B1BDF2F224FC73100F51375 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		9B1BDF40225053F100F51375 /* UIModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIModule.swift; sourceTree = "<group>"; };
 		9B2A78B4225424EF006BECDC /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Moya.framework; sourceTree = "<group>"; };
 		9B2A78B8225425D9006BECDC /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxTest.framework; sourceTree = "<group>"; };
@@ -219,8 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				9B1BDE81224FBA6600F51375 /* Views */,
-				9B1BDF40225053F100F51375 /* UIModule.swift */,
-				9B1BDF2B224FC57900F51375 /* Support Files */,
+				9BA056B8226BA9B400DF1ACF /* Modules */,
 				9B1BDE59224FB74100F51375 /* MATUI.h */,
 				9B1BDE5A224FB74100F51375 /* Info.plist */,
 			);
@@ -338,13 +333,12 @@
 			path = ../Carthage/Build/iOS;
 			sourceTree = "<group>";
 		};
-		9B1BDF2B224FC57900F51375 /* Support Files */ = {
+		9BA056B8226BA9B400DF1ACF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				9B1BDF2F224FC73100F51375 /* R.generated.swift */,
-				9B1BDF2C224FC58800F51375 /* Assets.xcassets */,
+				9B1BDF40225053F100F51375 /* UIModule.swift */,
 			);
-			path = "Support Files";
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,7 +360,6 @@
 			buildConfigurationList = 9B1BDE6A224FB74100F51375 /* Build configuration list for PBXNativeTarget "MATUI" */;
 			buildPhases = (
 				9B1BDE51224FB74100F51375 /* Headers */,
-				9B1BDF2E224FC65600F51375 /* Generate R.swift */,
 				9B1BDE52224FB74100F51375 /* Sources */,
 				9B1BDE53224FB74100F51375 /* Frameworks */,
 				9B1BDE54224FB74100F51375 /* Resources */,
@@ -443,7 +436,6 @@
 			files = (
 				9B1BDE96224FBA6600F51375 /* UserProfileViewController.xib in Resources */,
 				9B1BDE8F224FBA6600F51375 /* RepositoryDetailViewController.xib in Resources */,
-				9B1BDF2D224FC58800F51375 /* Assets.xcassets in Resources */,
 				9B1BDE91224FBA6600F51375 /* UserSearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,29 +450,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		9B1BDF2E224FC65600F51375 /* Generate R.swift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(TEMP_DIR)/rswift-lastrun",
-			);
-			name = "Generate R.swift";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(SRCROOT)/R.generated.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/../rswift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		9B1BDE52224FB74100F51375 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -489,7 +458,6 @@
 				9B1BDE8E224FBA6600F51375 /* RepositoryDetailViewModel.swift in Sources */,
 				9B1BDE94224FBA6600F51375 /* UserProfileViewController.swift in Sources */,
 				9B1BDE93224FBA6600F51375 /* UserSearchViewController.swift in Sources */,
-				9B1BDF30224FC73100F51375 /* R.generated.swift in Sources */,
 				9B1BDE90224FBA6600F51375 /* RepositoryDetailViewController.swift in Sources */,
 				9B1BDF41225053F100F51375 /* UIModule.swift in Sources */,
 				9B1BDE92224FBA6600F51375 /* UserSearchViewModel.swift in Sources */,

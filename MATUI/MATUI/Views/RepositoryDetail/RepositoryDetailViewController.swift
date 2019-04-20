@@ -26,7 +26,7 @@ public class RepositoryDetailViewController: UIViewController, ViewModelBindable
     // MARK: - Contructors
     
     public init() {
-        super.init(nibName: R.nib.repositoryDetailViewController.name, bundle: R.nib.repositoryDetailViewController.bundle)
+        super.init(nibName: "RepositoryDetailViewController", bundle: Bundle(for: RepositoryDetailViewController.self))
     }
     
     public required init?(coder aDecoder: NSCoder) {

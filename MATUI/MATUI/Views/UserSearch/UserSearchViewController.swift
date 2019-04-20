@@ -26,7 +26,7 @@ public class UserSearchViewController: UIViewController, ViewModelBindable {
     // MARK: - Contructors
     
     public init() {
-        super.init(nibName: R.nib.userSearchViewController.name, bundle: R.nib.userSearchViewController.bundle)
+        super.init(nibName: "UserSearchViewController", bundle: Bundle(for: UserSearchViewController.self))
     }
     
     public required init?(coder aDecoder: NSCoder) {

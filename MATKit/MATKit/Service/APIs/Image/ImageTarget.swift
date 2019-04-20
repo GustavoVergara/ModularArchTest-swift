@@ -37,8 +37,8 @@ public struct ImageTarget: TargetType {
 public extension ImageTarget {
     
     init(url: URL) {
-        self.baseURL = url.baseURL ?? url
-        self.path = url.path
+        self.baseURL = url
+        self.path = ""
         self.method = .get
         self.sampleData = Data()
         self.task = .requestPlain

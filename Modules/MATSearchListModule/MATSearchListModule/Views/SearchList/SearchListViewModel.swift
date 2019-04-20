@@ -42,7 +42,9 @@ public class SearchListViewModel: ViewModelType {
         
         let isSearchingRepositoriesDriver = selectUserAction.executing.asDriver(onErrorJustReturn: false)
         
-        let imagesDriver = searchAction.elements
+        let usersDriver = searchAction.elements.asDriver(onErrorJustReturn: [])
+        
+        let imagesDriver = usersDriver
             .map { (users) -> [URL: RxImage] in
                 var images = [URL: RxImage]()
                 for user in users {
@@ -85,7 +87,7 @@ public class SearchListViewModel: ViewModelType {
         
         self.output = Output(
             isSearchingUsers: isSearchingUsersDriver,
-            users: searchAction.elements.asDriver(onErrorJustReturn: []),
+            users: usersDriver,
             isSearchingRepositories: isSearchingRepositoriesDriver,
             avatars: imagesDriver,
             error: errorSignal

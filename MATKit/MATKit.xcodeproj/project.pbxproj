@@ -84,6 +84,7 @@
 		9B2A78CD22542F9B006BECDC /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2A785B225413D7006BECDC /* RxTest.framework */; };
 		9B2A78CE22542F9B006BECDC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2A785E225413D7006BECDC /* RxBlocking.framework */; };
 		9B35B15A226BC5F9000D0051 /* RxResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35B159226BC5F9000D0051 /* RxResource.swift */; };
+		9B35B15D226BE8DF000D0051 /* RxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35B15C226BE8DF000D0051 /* RxTableViewCell.swift */; };
 		9B8ECB70225C3A3900663A4F /* ImageTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8ECB6F225C3A3900663A4F /* ImageTarget.swift */; };
 		9B8ECB72225C3C6800663A4F /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8ECB71225C3C6800663A4F /* ImageAPI.swift */; };
 		9BA056B7226BA99900DF1ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA056B6226BA99900DF1ACF /* Assets.xcassets */; };
@@ -183,6 +184,7 @@
 		9B2A7865225413D7006BECDC /* RxNimbleRxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxNimbleRxBlocking.framework; sourceTree = "<group>"; };
 		9B2A78B2225415F6006BECDC /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		9B35B159226BC5F9000D0051 /* RxResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxResource.swift; sourceTree = "<group>"; };
+		9B35B15C226BE8DF000D0051 /* RxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTableViewCell.swift; sourceTree = "<group>"; };
 		9B8ECB6F225C3A3900663A4F /* ImageTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTarget.swift; sourceTree = "<group>"; };
 		9B8ECB71225C3C6800663A4F /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 		9BA056B6226BA99900DF1ACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		9B1BDEDB224FBF3300F51375 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9B35B15B226BE8C7000D0051 /* Rx */,
 				9B1BDEDC224FBF3300F51375 /* LoadingOverlayView */,
 			);
 			path = UI;
@@ -481,6 +484,14 @@
 			);
 			name = Carthage;
 			path = ../Carthage/Build/iOS;
+			sourceTree = "<group>";
+		};
+		9B35B15B226BE8C7000D0051 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				9B35B15C226BE8DF000D0051 /* RxTableViewCell.swift */,
+			);
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		9B8ECB6E225C3A2400663A4F /* Image */ = {
@@ -671,6 +682,7 @@
 				9B1BDF0E224FBF3300F51375 /* UtilsWrapper.swift in Sources */,
 				9B1BDF1A224FBF3300F51375 /* OptionalType.swift in Sources */,
 				9B1BDF1D224FBF3300F51375 /* GitHubAPI.swift in Sources */,
+				9B35B15D226BE8DF000D0051 /* RxTableViewCell.swift in Sources */,
 				9B1BDF14224FBF3300F51375 /* ActionType.swift in Sources */,
 				9B1BDF15224FBF3300F51375 /* ActionExtensions.swift in Sources */,
 			);

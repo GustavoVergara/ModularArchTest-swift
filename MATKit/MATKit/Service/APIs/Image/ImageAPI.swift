@@ -28,7 +28,6 @@ public struct ImageAPI {
     public func getImage(from url: URL) -> Single<UIImage> {
         return self.imageProvider.rx.request(.init(url: url))
             .mapImage()
-            .debug(file: "ImageAPI")
             .flatMap({ image in
                 if let image = image {
                     return .just(image)

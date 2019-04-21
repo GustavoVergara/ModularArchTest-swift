@@ -42,6 +42,8 @@ class SearchListViewController: UIViewController, ViewModelBindable {
         
         self.searchBar.showsSearchResultsButton = true
         self.navigationItem.titleView = self.searchBar
+        
+        self.tableView.register(RxTableViewCell.self, forCellReuseIdentifier: "RxTableViewCell")
     }
     
     // MARK: - Bindings
@@ -76,9 +78,8 @@ class SearchListViewController: UIViewController, ViewModelBindable {
             .drive(self.view.rx.hasLoadingOverlay)
             .disposed(by: disposeBag)
         
-        
         self.tableView.rx.items(viewModel.output.users.asObservable()) ({ (tableView, row, user) -> UITableViewCell in
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+            let cell = RxTableViewCell(style: .subtitle, reuseIdentifier: "RxTableViewCell")
             
             cell.textLabel?.text = user.login
             cell.detailTextLabel?.text = String(user.id)
@@ -87,15 +88,15 @@ class SearchListViewController: UIViewController, ViewModelBindable {
                 let imageSize = CGSize(width: 44, height: 44)
                 imageView.layer.cornerRadius = imageSize.width / 2
                 imageView.clipsToBounds = true
-                Driver<UIImage>.just(R.image.github_octocat()!)
+                Driver.just(R.image.github_octocat()!)
                     .concat(viewModel.output.avatar(for: user))
                     .map({ $0 .af_imageScaled(to: imageSize) })
                     .drive(imageView.rx.image)
-                    .disposed(by: disposeBag)
+                    .disposed(by: cell.disposeBag)
                 
                 viewModel.output.isGettingImage(for: user)
                     .drive(imageView.rx.hasLoadingOverlay)
-                    .disposed(by: disposeBag)
+                    .disposed(by: cell.disposeBag)
             }
             
             return cell

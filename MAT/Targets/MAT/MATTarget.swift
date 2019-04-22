@@ -18,7 +18,7 @@ struct MATTarget: Target {
     
     init() {
         self.modules = [CoreModule(), UIModule()]
-        self.mainCoordinator = DefaultCoordinator(modules: self.modules)
+        self.mainCoordinator = CoreCoordinator(modules: self.modules)
     }
     
 }

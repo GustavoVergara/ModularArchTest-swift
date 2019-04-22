@@ -85,6 +85,10 @@
 		9B2A78CE22542F9B006BECDC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2A785E225413D7006BECDC /* RxBlocking.framework */; };
 		9B35B15A226BC5F9000D0051 /* RxResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35B159226BC5F9000D0051 /* RxResource.swift */; };
 		9B35B15D226BE8DF000D0051 /* RxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35B15C226BE8DF000D0051 /* RxTableViewCell.swift */; };
+		9B35B163226E0C1D000D0051 /* CoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35B15F226E0C1C000D0051 /* CoreCoordinator.swift */; };
+		9B35B164226E0C1D000D0051 /* CoreModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35B161226E0C1C000D0051 /* CoreModule.swift */; };
+		9B35B165226E0C1D000D0051 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35B160226E0C1C000D0051 /* Target.swift */; };
+		9B35B166226E0C1D000D0051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35B162226E0C1C000D0051 /* AppDelegate.swift */; };
 		9B8ECB70225C3A3900663A4F /* ImageTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8ECB6F225C3A3900663A4F /* ImageTarget.swift */; };
 		9B8ECB72225C3C6800663A4F /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8ECB71225C3C6800663A4F /* ImageAPI.swift */; };
 		9BA056B7226BA99900DF1ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA056B6226BA99900DF1ACF /* Assets.xcassets */; };
@@ -164,7 +168,7 @@
 		9B1BDF04224FBF3300F51375 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9B1BDF05224FBF3300F51375 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		9B1BDF06224FBF3300F51375 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		9B1BE021225303C800F51375 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Module.swift; path = MATKit/Kit/Module.swift; sourceTree = SOURCE_ROOT; };
+		9B1BE021225303C800F51375 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Module.swift; path = MATKit/Core/TargetAbstraction/Module.swift; sourceTree = SOURCE_ROOT; };
 		9B2A78082253F06B006BECDC /* CallbackHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallbackHandler.swift; sourceTree = "<group>"; };
 		9B2A7854225413D7006BECDC /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Moya.framework; sourceTree = "<group>"; };
 		9B2A7855225413D7006BECDC /* Action.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Action.framework; sourceTree = "<group>"; };
@@ -185,6 +189,10 @@
 		9B2A78B2225415F6006BECDC /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		9B35B159226BC5F9000D0051 /* RxResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxResource.swift; sourceTree = "<group>"; };
 		9B35B15C226BE8DF000D0051 /* RxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTableViewCell.swift; sourceTree = "<group>"; };
+		9B35B15F226E0C1C000D0051 /* CoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreCoordinator.swift; sourceTree = "<group>"; };
+		9B35B160226E0C1C000D0051 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		9B35B161226E0C1C000D0051 /* CoreModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModule.swift; sourceTree = "<group>"; };
+		9B35B162226E0C1C000D0051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B8ECB6F225C3A3900663A4F /* ImageTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTarget.swift; sourceTree = "<group>"; };
 		9B8ECB71225C3C6800663A4F /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 		9BA056B6226BA99900DF1ACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -258,6 +266,7 @@
 		9B1BDEBF224FBEC600F51375 /* MATKit */ = {
 			isa = PBXGroup;
 			children = (
+				9B35B15E226E0B6A000D0051 /* Core */,
 				9BA056B5226BA98B00DF1ACF /* Assets */,
 				9B1BDED7224FBF3300F51375 /* Kit */,
 				9B1BDEF9224FBF3300F51375 /* Service */,
@@ -279,7 +288,6 @@
 		9B1BDED7224FBF3300F51375 /* Kit */ = {
 			isa = PBXGroup;
 			children = (
-				9B1BDF422252960100F51375 /* XCoordinator */,
 				9B1BDED8224FBF3300F51375 /* Moya */,
 				9B1BDEDB224FBF3300F51375 /* UI */,
 				9B1BDEE0224FBF3300F51375 /* ViewModelType */,
@@ -445,15 +453,6 @@
 			path = GitHub;
 			sourceTree = "<group>";
 		};
-		9B1BDF422252960100F51375 /* XCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-				9B1BDEDF224FBF3300F51375 /* AppRoute.swift */,
-				9B1BE021225303C800F51375 /* Module.swift */,
-			);
-			path = XCoordinator;
-			sourceTree = "<group>";
-		};
 		9B2A780A22541311006BECDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +491,35 @@
 				9B35B15C226BE8DF000D0051 /* RxTableViewCell.swift */,
 			);
 			path = Rx;
+			sourceTree = "<group>";
+		};
+		9B35B15E226E0B6A000D0051 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9B35B168226E0D18000D0051 /* TargetAbstraction */,
+				9B35B167226E0CFA000D0051 /* Routes */,
+				9B35B161226E0C1C000D0051 /* CoreModule.swift */,
+				9B35B15F226E0C1C000D0051 /* CoreCoordinator.swift */,
+				9B35B162226E0C1C000D0051 /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9B35B167226E0CFA000D0051 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				9B1BDEDF224FBF3300F51375 /* AppRoute.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		9B35B168226E0D18000D0051 /* TargetAbstraction */ = {
+			isa = PBXGroup;
+			children = (
+				9B35B160226E0C1C000D0051 /* Target.swift */,
+				9B1BE021225303C800F51375 /* Module.swift */,
+			);
+			path = TargetAbstraction;
 			sourceTree = "<group>";
 		};
 		9B8ECB6E225C3A2400663A4F /* Image */ = {
@@ -655,6 +683,7 @@
 				9B1BDF17224FBF3300F51375 /* Rx+UIViewController.swift in Sources */,
 				9B35B15A226BC5F9000D0051 /* RxResource.swift in Sources */,
 				9B1BDF0F224FBF3300F51375 /* DataRequest+Rx.swift in Sources */,
+				9B35B165226E0C1D000D0051 /* Target.swift in Sources */,
 				9B1BDF24224FBF3300F51375 /* Issue.swift in Sources */,
 				9B1BDF16224FBF3300F51375 /* RxExtension.swift in Sources */,
 				9B1BDF22224FBF3300F51375 /* Milestone.swift in Sources */,
@@ -664,6 +693,7 @@
 				9B1BDF07224FBF3300F51375 /* CacheControlPlugin.swift in Sources */,
 				9B1BDF1E224FBF3300F51375 /* GitHubTarget.swift in Sources */,
 				9B1BE022225303C800F51375 /* Module.swift in Sources */,
+				9B35B166226E0C1D000D0051 /* AppDelegate.swift in Sources */,
 				9B1BDF12224FBF3300F51375 /* UIViewControllerExtensions.swift in Sources */,
 				9B2A78092253F06B006BECDC /* CallbackHandler.swift in Sources */,
 				9B1BDF21224FBF3300F51375 /* SearchResult.swift in Sources */,
@@ -678,8 +708,10 @@
 				9B1BDF09224FBF3300F51375 /* Rx+LoadingOverlayView.swift in Sources */,
 				9B8ECB70225C3A3900663A4F /* ImageTarget.swift in Sources */,
 				9B1BDF0D224FBF3300F51375 /* ViewModelType.swift in Sources */,
+				9B35B163226E0C1D000D0051 /* CoreCoordinator.swift in Sources */,
 				9B1BDF1B224FBF3300F51375 /* SharedSequence+Optional.swift in Sources */,
 				9B1BDF0E224FBF3300F51375 /* UtilsWrapper.swift in Sources */,
+				9B35B164226E0C1D000D0051 /* CoreModule.swift in Sources */,
 				9B1BDF1A224FBF3300F51375 /* OptionalType.swift in Sources */,
 				9B1BDF1D224FBF3300F51375 /* GitHubAPI.swift in Sources */,
 				9B35B15D226BE8DF000D0051 /* RxTableViewCell.swift in Sources */,

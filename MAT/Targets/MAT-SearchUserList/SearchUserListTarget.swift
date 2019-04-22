@@ -19,7 +19,7 @@ struct SearchUserListTarget: Target {
 
     init() {
         self.modules = [CoreModule(), SearchListModule(), UIModule()]
-        self.mainCoordinator = DefaultCoordinator(modules: self.modules)
+        self.mainCoordinator = CoreCoordinator(modules: self.modules)
     }
     
 }

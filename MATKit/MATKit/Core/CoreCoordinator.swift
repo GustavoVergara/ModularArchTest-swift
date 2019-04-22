@@ -1,5 +1,5 @@
 //
-//  DefaultCoordinator.swift
+//  CoreCoordinator.swift
 //  MATUI
 //
 //  Created by Gustavo Vergara Garcia on 30/03/19.
@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import MATKit
 import XCoordinator
 
-public class DefaultCoordinator: NavigationCoordinator<AppRoute> {
+public class CoreCoordinator: NavigationCoordinator<AppRoute> {
     
     let modules: [Module]
     

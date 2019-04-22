@@ -18,14 +18,9 @@
 		9B0A1819224F9BE200D458E9 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1817224F9BE200D458E9 /* RxMoya.framework */; };
 		9B0A181D224FA43600D458E9 /* Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A181C224FA43600D458E9 /* Action.framework */; };
 		9B0A181F224FA56800D458E9 /* XCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A181E224FA56800D458E9 /* XCoordinator.framework */; };
-		9B1BDF3F224FC86800F51375 /* DefaultCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF3E224FC86800F51375 /* DefaultCoordinator.swift */; };
-		9B1BDF4622529D7A00F51375 /* CoreModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF4522529D7A00F51375 /* CoreModule.swift */; };
-		9B3D34DA2224891500E97AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D34D92224891500E97AA4 /* AppDelegate.swift */; };
-		9B3D34E12224891800E97AA4 /* Default.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3D34E02224891800E97AA4 /* Default.xcassets */; };
+		9B35B16A226E10D9000D0051 /* MAT-SearchUserList.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B35B169226E10D9000D0051 /* MAT-SearchUserList.xcassets */; };
+		9B3D34E12224891800E97AA4 /* MAT.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3D34E02224891800E97AA4 /* MAT.xcassets */; };
 		9B3D34E42224891800E97AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3D34E22224891800E97AA4 /* LaunchScreen.storyboard */; };
-		9B8ECB15225C19B000663A4F /* DefaultCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF3E224FC86800F51375 /* DefaultCoordinator.swift */; };
-		9B8ECB16225C19B000663A4F /* CoreModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BDF4522529D7A00F51375 /* CoreModule.swift */; };
-		9B8ECB17225C19B000663A4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D34D92224891500E97AA4 /* AppDelegate.swift */; };
 		9B8ECB1B225C19B000663A4F /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1806224F0D2C00D458E9 /* RxAtomic.framework */; };
 		9B8ECB1C225C19B000663A4F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1808224F0D2C00D458E9 /* RxSwift.framework */; };
 		9B8ECB1D225C19B000663A4F /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1802224F0D2C00D458E9 /* RxCocoa.framework */; };
@@ -38,13 +33,10 @@
 		9B8ECB24225C19B000663A4F /* XCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A181E224FA56800D458E9 /* XCoordinator.framework */; };
 		9B8ECB25225C19B000663A4F /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0A1803224F0D2C00D458E9 /* Rswift.framework */; };
 		9B8ECB27225C19B000663A4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3D34E22224891800E97AA4 /* LaunchScreen.storyboard */; };
-		9B8ECB28225C19B000663A4F /* Default.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3D34E02224891800E97AA4 /* Default.xcassets */; };
 		9B8ECB53225C210900663A4F /* MATUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8ECB4B225C1C0F00663A4F /* MATUI.framework */; };
 		9B8ECB54225C210900663A4F /* MATUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8ECB4B225C1C0F00663A4F /* MATUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B8ECB55225C210900663A4F /* MATKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8ECB4C225C1C0F00663A4F /* MATKit.framework */; };
 		9B8ECB56225C210900663A4F /* MATKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8ECB4C225C1C0F00663A4F /* MATKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9B8ECB5C225C27EF00663A4F /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8ECB5B225C27EF00663A4F /* Target.swift */; };
-		9B8ECB5F225C28EC00663A4F /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8ECB5B225C27EF00663A4F /* Target.swift */; };
 		9B8ECB63225C2BB900663A4F /* MATUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8ECB4B225C1C0F00663A4F /* MATUI.framework */; };
 		9B8ECB64225C2BB900663A4F /* MATUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8ECB4B225C1C0F00663A4F /* MATUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B8ECB65225C2BB900663A4F /* MATKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8ECB4C225C1C0F00663A4F /* MATKit.framework */; };
@@ -103,18 +95,15 @@
 		9B0A181E224FA56800D458E9 /* XCoordinator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XCoordinator.framework; sourceTree = "<group>"; };
 		9B0A1822224FAFA600D458E9 /* RxNimbleRxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxNimbleRxBlocking.framework; sourceTree = "<group>"; };
 		9B0A1823224FAFA600D458E9 /* RxNimbleRxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxNimbleRxTest.framework; sourceTree = "<group>"; };
-		9B1BDF3E224FC86800F51375 /* DefaultCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCoordinator.swift; sourceTree = "<group>"; };
-		9B1BDF4522529D7A00F51375 /* CoreModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModule.swift; sourceTree = "<group>"; };
+		9B35B169226E10D9000D0051 /* MAT-SearchUserList.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "MAT-SearchUserList.xcassets"; sourceTree = "<group>"; };
 		9B3D34D62224891500E97AA4 /* MAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B3D34D92224891500E97AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B3D34E02224891800E97AA4 /* Default.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Default.xcassets; sourceTree = "<group>"; };
+		9B3D34E02224891800E97AA4 /* MAT.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MAT.xcassets; sourceTree = "<group>"; };
 		9B3D34E32224891800E97AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B3D34E52224891800E97AA4 /* MATInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MATInfo.plist; sourceTree = "<group>"; };
 		9B8ECB32225C19B000663A4F /* MAT-SearchUserList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MAT-SearchUserList.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8ECB33225C19B000663A4F /* MAT-SearchUserListInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MAT-SearchUserListInfo.plist"; path = "/Users/gustavovergaragarcia/Documents/Workspace/iOS Projects/ModularArchTest-swift/MAT/Targets/MAT-SearchUserList/MAT-SearchUserListInfo.plist"; sourceTree = "<absolute>"; };
 		9B8ECB4B225C1C0F00663A4F /* MATUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MATUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8ECB4C225C1C0F00663A4F /* MATKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MATKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B8ECB5B225C27EF00663A4F /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		9B8ECB5D225C289700663A4F /* MATTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATTarget.swift; sourceTree = "<group>"; };
 		9B8ECB6B225C2BC500663A4F /* MATSearchListModule.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MATSearchListModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA056AD22691A4300DF1ACF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -225,10 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				9B8ECB58225C222B00663A4F /* Targets */,
-				9B1BDF3E224FC86800F51375 /* DefaultCoordinator.swift */,
-				9B3D34D92224891500E97AA4 /* AppDelegate.swift */,
-				9B1BDF4522529D7A00F51375 /* CoreModule.swift */,
-				9B8ECB5B225C27EF00663A4F /* Target.swift */,
 				9B3D34F92224894700E97AA4 /* Support Files */,
 			);
 			path = MAT;
@@ -238,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				9B3D34E22224891800E97AA4 /* LaunchScreen.storyboard */,
-				9B3D34E02224891800E97AA4 /* Default.xcassets */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -255,9 +239,10 @@
 		9B8ECB59225C223300663A4F /* MAT */ = {
 			isa = PBXGroup;
 			children = (
-				9B3D34E52224891800E97AA4 /* MATInfo.plist */,
 				9BA056AD22691A4300DF1ACF /* main.swift */,
 				9B8ECB5D225C289700663A4F /* MATTarget.swift */,
+				9B3D34E02224891800E97AA4 /* MAT.xcassets */,
+				9B3D34E52224891800E97AA4 /* MATInfo.plist */,
 			);
 			path = MAT;
 			sourceTree = "<group>";
@@ -265,9 +250,10 @@
 		9B8ECB5A225C227500663A4F /* MAT-SearchUserList */ = {
 			isa = PBXGroup;
 			children = (
-				9B8ECB33225C19B000663A4F /* MAT-SearchUserListInfo.plist */,
 				9BA056B222691AF600DF1ACF /* main.swift */,
 				9BA056AF22691AA100DF1ACF /* SearchUserListTarget.swift */,
+				9B35B169226E10D9000D0051 /* MAT-SearchUserList.xcassets */,
+				9B8ECB33225C19B000663A4F /* MAT-SearchUserListInfo.plist */,
 			);
 			path = "MAT-SearchUserList";
 			sourceTree = "<group>";
@@ -355,7 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B3D34E42224891800E97AA4 /* LaunchScreen.storyboard in Resources */,
-				9B3D34E12224891800E97AA4 /* Default.xcassets in Resources */,
+				9B3D34E12224891800E97AA4 /* MAT.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B8ECB27225C19B000663A4F /* LaunchScreen.storyboard in Resources */,
-				9B8ECB28225C19B000663A4F /* Default.xcassets in Resources */,
+				9B35B16A226E10D9000D0051 /* MAT-SearchUserList.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,12 +442,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B1BDF3F224FC86800F51375 /* DefaultCoordinator.swift in Sources */,
-				9B1BDF4622529D7A00F51375 /* CoreModule.swift in Sources */,
 				9BA056AE22691A4300DF1ACF /* main.swift in Sources */,
 				9BA056AC2269180300DF1ACF /* MATTarget.swift in Sources */,
-				9B8ECB5C225C27EF00663A4F /* Target.swift in Sources */,
-				9B3D34DA2224891500E97AA4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,12 +451,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8ECB5F225C28EC00663A4F /* Target.swift in Sources */,
-				9B8ECB15225C19B000663A4F /* DefaultCoordinator.swift in Sources */,
 				9BA056B322691AF600DF1ACF /* main.swift in Sources */,
 				9BA056B122691AB100DF1ACF /* SearchUserListTarget.swift in Sources */,
-				9B8ECB16225C19B000663A4F /* CoreModule.swift in Sources */,
-				9B8ECB17225C19B000663A4F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

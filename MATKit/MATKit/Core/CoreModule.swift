@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import MATKit
 import XCoordinator
 
-class CoreModule: Module {
+public class CoreModule: Module {
     
-    override func destination<R: Route>(for route: R, router: AnyRouter<R>) -> Destination? {
+    public override func destination<R: Route>(for route: R, router: AnyRouter<R>) -> Destination? {
         switch (route, router) {
         case let (route as AppRoute, _):
             switch route {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MATKit
 
 TargetContainer.keep(MATTarget.self)
 

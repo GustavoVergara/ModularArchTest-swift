@@ -11,7 +11,7 @@ import XCoordinator
 
 public protocol Target {
     var modules: [Module] { get }
-    var mainCoordinator: NavigationCoordinator<AppRoute> { get }
+    var mainRouter: AnyRouter<AppRoute> { get }
 
     init()
 }

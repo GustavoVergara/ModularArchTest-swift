@@ -15,10 +15,10 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     public var window: UIWindow? = UIWindow()
-    let coordinator = TargetContainer.target.mainCoordinator
+    let mainRouter = TargetContainer.target.mainRouter
     
     public func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        self.window.map(self.coordinator.setRoot)
+        self.window.map(self.mainRouter.setRoot)
         return true
     }
     

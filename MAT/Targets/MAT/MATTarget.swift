@@ -14,11 +14,11 @@ import MATUI
 struct MATTarget: Target {
     
     var modules: [Module]
-    var mainCoordinator: NavigationCoordinator<AppRoute>
+    var mainRouter: AnyRouter<AppRoute>
     
     init() {
         self.modules = [CoreModule(), UIModule()]
-        self.mainCoordinator = CoreCoordinator(modules: self.modules)
+        self.mainRouter = CoreCoordinator(modules: self.modules).anyRouter
     }
     
 }

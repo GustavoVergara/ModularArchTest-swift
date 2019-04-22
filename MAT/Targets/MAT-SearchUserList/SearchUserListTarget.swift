@@ -15,11 +15,11 @@ import MATUI
 struct SearchUserListTarget: Target {
     
     var modules: [Module]
-    var mainCoordinator: NavigationCoordinator<AppRoute>
-
+    var mainRouter: AnyRouter<AppRoute>
+    
     init() {
         self.modules = [CoreModule(), SearchListModule(), UIModule()]
-        self.mainCoordinator = CoreCoordinator(modules: self.modules)
+        self.mainRouter = CoreCoordinator(modules: self.modules).anyRouter
     }
     
 }

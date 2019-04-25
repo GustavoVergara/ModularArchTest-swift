@@ -13,7 +13,7 @@ import Alamofire
 public enum GitHubTarget: TargetType {
     case getRepositories(ownerUsername: String?, type: RepoType, sort: RepoSortType, order: SortOrder)
     case searchIssues(repository: String, state: Issue.State?, sort: SearchIssuesSortType, order: SortOrder)
-    case searchUsers(login: String, sort: SearchUsersSortType?, order: SortOrder)
+    case searchUsers(login: String, page: Int?, sort: SearchUsersSortType?, order: SortOrder)
     
     /// The target's base `URL`.
     public var baseURL: URL {
@@ -77,13 +77,14 @@ public enum GitHubTarget: TargetType {
                 ],
                 encoding: URLEncoding.default
             )
-        case let .searchUsers(login, sort, order):
+        case let .searchUsers(login, page, sort, order):
             return .requestParameters(
-                parameters: [
-                    "q": login /*+ " " + gitHubQueryString(from: <#T##[String : String]#>)*/,
-                    "sort": sort?.rawValue as Any,
-                    "order": order.rawValue
-                ],
+                parameters: .ignoringNil([
+                    "q": login,
+                    "sort": sort?.rawValue,
+                    "order": order.rawValue,
+                    "page": page
+                ]),
                 encoding: URLEncoding.default
             )
         }

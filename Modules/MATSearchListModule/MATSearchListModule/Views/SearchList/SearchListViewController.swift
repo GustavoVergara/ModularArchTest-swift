@@ -19,6 +19,15 @@ class SearchListViewController: UIViewController, ViewModelBindable {
     
     let searchBar = UISearchBar()
     
+    let getMoreButton: UIButton = {
+        let getMoreUsersButton = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 44))
+        getMoreUsersButton.setTitle("Get More", for: .normal)
+        getMoreUsersButton.setTitle("Unable to get more", for: .disabled)
+        getMoreUsersButton.setTitleColor(.blue, for: .normal)
+        getMoreUsersButton.setTitleColor(.lightGray, for: .disabled)
+        return getMoreUsersButton
+    }()
+    
     // MARK: - Properties
     
     var disposeBag: DisposeBag?
@@ -44,6 +53,8 @@ class SearchListViewController: UIViewController, ViewModelBindable {
         self.navigationItem.titleView = self.searchBar
         
         self.tableView.register(RxTableViewCell.self, forCellReuseIdentifier: "RxTableViewCell")
+        
+        self.tableView.tableFooterView = self.getMoreButton
     }
     
     // MARK: - Bindings
@@ -64,6 +75,26 @@ class SearchListViewController: UIViewController, ViewModelBindable {
 //            .bind(to: viewModel.input.search)
 //            .disposed(by: disposeBag)
         
+//        self.tableView.rx.willDisplayCell
+//            .map({ Double($0.indexPath.row) })
+//            .withLatestFrom(viewModel.output.users, resultSelector: { $0 / Double($1.count) })
+//            .filter({ $0 > 0.7 })
+//            .ignoreValues()
+//            .bind(to: viewModel.input.getMoreUsers)
+//            .disposed(by: disposeBag)
+        
+        self.tableView.rx.prefetchRows
+            .withLatestFrom(viewModel.output.users) { (indeces, users) in indeces.map({ users[$0.row] }) }
+            .map({ $0.compactMap(viewModel.output.prefetchAvatar) })
+            .subscribe(onNext: { [weak disposeBag] (disposables) in
+                disposeBag?.insert(disposables)
+            })
+            .disposed(by: disposeBag)
+        
+        self.getMoreButton.rx.tap
+            .bind(to: viewModel.input.getMoreUsers)
+            .disposed(by: disposeBag)
+        
         self.tableView.rx.modelSelected(User.self)
             .bind(to: viewModel.input.selectUser)
             .disposed(by: disposeBag)
@@ -76,6 +107,10 @@ class SearchListViewController: UIViewController, ViewModelBindable {
         
         viewModel.output.isSearching
             .drive(self.view.rx.hasLoadingOverlay)
+            .disposed(by: disposeBag)
+        
+        viewModel.output.isGettingMoreUsers
+            .drive(self.getMoreButton.rx.hasLoadingOverlay)
             .disposed(by: disposeBag)
         
         self.tableView.rx.items(viewModel.output.users.asObservable()) ({ (tableView, row, user) -> UITableViewCell in

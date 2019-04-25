@@ -36,8 +36,8 @@ public struct GitHubAPI {
             .map(SearchResult<Issue>.self, using: self.githubJSONDecoder)
     }
     
-    public func searchUsers(login: String, sort: SearchUsersSortType? = nil, order: SortOrder = .desc) -> Single<SearchResult<User>> {
-        return self.gitHubProvider.rx.request(.searchUsers(login: login, sort: sort, order: order))
+    public func searchUsers(login: String, page: Int = 1, sort: SearchUsersSortType? = nil, order: SortOrder = .desc) -> Single<SearchResult<User>> {
+        return self.gitHubProvider.rx.request(.searchUsers(login: login, page: page, sort: sort, order: order))
             .filterSuccessfulStatusAndRedirectCodes()
             .map(SearchResult<User>.self, using: self.githubJSONDecoder)
     }

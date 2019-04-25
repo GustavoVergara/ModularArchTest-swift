@@ -6,7 +6,7 @@
       assignedFileDataType = "public.ruby-script">
    </FileRef>
    <FileRef
-      location = "group:/Users/gustavovergaragarcia/Documents/Workspace/iOS Projects/ModularArchTest-swift/MAT.xcodeproj">
+      location = "container:MAT.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:MATKit/MATKit.xcodeproj">

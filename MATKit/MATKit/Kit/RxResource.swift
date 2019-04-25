@@ -28,6 +28,10 @@ public struct RxResource<Element> {
         self.init(resourceObservable: .just(resource), isGettingResource: .just(false))
     }
     
+    public func prefetch() {
+        self.resource.subscribe().disposed(by: self.disposeBag)
+    }
+    
 }
 
 #if canImport(Action)

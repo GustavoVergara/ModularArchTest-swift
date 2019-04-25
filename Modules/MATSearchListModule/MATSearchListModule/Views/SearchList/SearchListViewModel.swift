@@ -19,14 +19,25 @@ public class SearchListViewModel: ViewModelType {
     private let disposeBag = DisposeBag()
     
     public init(router: AnyRouter<AppRoute>, gitHubAPI: GitHubAPI = GitHubAPI(), imageAPI: ImageAPI = ImageAPI()) {
-        let searchAction = Action<String?, [User]>(workFactory: { (login) in
+        let pageControl = PageControl<User>()
+        Disposables.createStrongReferenceTo(pageControl).disposed(by: self.disposeBag)
+        
+        var lastSearch: String?
+        let searchAction = Action<String?, SearchResult<User>>(workFactory: { (login) in
+            lastSearch = login
             return gitHubAPI.searchUsers(login: login ?? "")
-                .map({ $0.items })
                 .asObservable()
         })
         Disposables.createStrongReferenceTo(searchAction).disposed(by: self.disposeBag)
-        
         let isSearchingUsersDriver = searchAction.executing.asDriver(onErrorJustReturn: false)
+        
+        let getNextUsersPageAction = Action<Void, SearchResult<User>>(workFactory: {
+            guard let lastSearch = lastSearch else { return .empty() }
+            return gitHubAPI.searchUsers(login: lastSearch, page: (pageControl.availablePages.last ?? 0) + 1)
+                .asObservable()
+        })
+        Disposables.createStrongReferenceTo(getNextUsersPageAction).disposed(by: self.disposeBag)
+        let isGettingMoreUsersDriver = getNextUsersPageAction.executing.asDriver(onErrorJustReturn: false)
         
         let selectUserAction = Action<User, [Repository]>(workFactory: { (user) -> Observable<[Repository]> in
             return gitHubAPI.getRepositories(ownerUsername: user.login)
@@ -44,10 +55,24 @@ public class SearchListViewModel: ViewModelType {
                 .asObservable()
         })
         Disposables.createStrongReferenceTo(selectUserAction).disposed(by: self.disposeBag)
-        
         let isSearchingRepositoriesDriver = selectUserAction.executing.asDriver(onErrorJustReturn: false)
         
-        let usersDriver = searchAction.elements.asDriver(onErrorJustReturn: [])
+        searchAction.elements
+            .ignoreValues()
+            .bind(to: pageControl.rx.clear)
+            .disposed(by: self.disposeBag)
+        
+        searchAction.elements
+            .map({ ($0.items, 1) })
+            .bind(to: pageControl.rx.insert)
+            .disposed(by: self.disposeBag)
+        
+        getNextUsersPageAction.elements
+            .map({ $0.items })
+            .bind(to: pageControl.rx.add)
+            .disposed(by: self.disposeBag)
+        
+        let usersDriver = pageControl.rx.elements.asDriver(onErrorJustReturn: [])
         
         let imagesDriver = usersDriver
             .map { (users) -> [URL: RxImage] in
@@ -80,11 +105,13 @@ public class SearchListViewModel: ViewModelType {
         
         self.input = Input(
             search: searchAction.inputs,
+            getMoreUsers: getNextUsersPageAction.inputs,
             selectUser: selectUserAction.inputs
         )
         
         self.output = Output(
             isSearchingUsers: isSearchingUsersDriver,
+            isGettingMoreUsers: isGettingMoreUsersDriver,
             users: usersDriver,
             isSearchingRepositories: isSearchingRepositoriesDriver,
             avatars: imagesDriver,
@@ -99,11 +126,13 @@ public class SearchListViewModel: ViewModelType {
     
     public struct Input {
         public var search: InputSubject<String?>
+        public var getMoreUsers: InputSubject<Void>
         public var selectUser: InputSubject<User>
     }
     
     public struct Output {
         public var isSearchingUsers: Driver<Bool>
+        public var isGettingMoreUsers: Driver<Bool>
         public var users: Driver<[User]>
         public var isSearchingRepositories: Driver<Bool>
         public var avatars: Driver<[URL: RxImage]>
@@ -117,15 +146,30 @@ public class SearchListViewModel: ViewModelType {
             )
         }
         
-        public func avatar(for url: URL) -> Driver<UIImage> {
+        private func rxImage(for url: URL) -> Driver<RxImage> {
             return self.avatars
-                .map({ $0[url]?.resource ?? .empty() })
-                .flatMap({ $0.asDriver(onErrorDriveWith: .empty()) })
+                .map({ $0[url] })
+                .filterNil()
+        }
+        
+        public func avatar(for url: URL) -> Driver<UIImage> {
+            return self.rxImage(for: url)
+                .flatMap({ $0.resource.asDriver(onErrorDriveWith: .empty()) })
         }
         
         public func avatar(for user: User) -> Driver<UIImage> {
             guard let avatarURL = user.avatarURL else { return .empty() }
             return self.avatar(for: avatarURL)
+        }
+        
+        public func prefetchAvatar(for url: URL) -> Disposable {
+            return self.rxImage(for: url)
+                .drive(onNext: { $0.prefetch() })
+        }
+        
+        public func prefetchAvatar(for user: User) -> Disposable? {
+            guard let avatarURL = user.avatarURL else { return nil }
+            return self.prefetchAvatar(for: avatarURL)
         }
         
         public func isGettingImage(with url: URL)  -> Driver<Bool> {

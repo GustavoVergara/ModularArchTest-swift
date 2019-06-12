@@ -21,7 +21,7 @@ public struct ImageAPI {
     
     public init(
         gitHubProvider: MoyaProvider<ImageTarget> = MoyaProvider(plugins: [NetworkActivityIndicatorPlugin.default, CacheControlPlugin.default])
-        ) {
+    ) {
         self.imageProvider = gitHubProvider
     }
     

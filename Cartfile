@@ -1,8 +1,8 @@
-github "Alamofire/Alamofire" ~> 4.8
+github "Alamofire/Alamofire" # ~> 4.8
 github "Alamofire/AlamofireImage"
 
-github "ReactiveX/RxSwift" ~> 4.5
-github "RxSwiftCommunity/Action" ~> 3.11
+github "ReactiveX/RxSwift" # ~> 4.5
+github "RxSwiftCommunity/Action" # ~> 3.11
 
 github "Moya/Moya" "12.0.1"
 

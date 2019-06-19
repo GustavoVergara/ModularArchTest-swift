@@ -113,29 +113,32 @@ class SearchListViewController: UIViewController, ViewModelBindable {
             .drive(self.getMoreButton.rx.hasLoadingOverlay)
             .disposed(by: disposeBag)
         
-        self.tableView.rx.items(viewModel.output.users.asObservable()) ({ (tableView, row, user) -> UITableViewCell in
-            let cell = RxTableViewCell(style: .subtitle, reuseIdentifier: "RxTableViewCell")
-            
-            cell.textLabel?.text = user.login
-            cell.detailTextLabel?.text = String(user.id)
-            cell.detailTextLabel?.textColor = .darkGray
-            if let imageView = cell.imageView {
-                let imageSize = CGSize(width: 44, height: 44)
-                imageView.layer.cornerRadius = imageSize.width / 2
-                imageView.clipsToBounds = true
-                Driver.just(R.image.github_octocat()!)
-                    .concat(viewModel.output.avatar(for: user))
-                    .map({ $0 .af_imageScaled(to: imageSize) })
-                    .drive(imageView.rx.image)
-                    .disposed(by: cell.disposeBag)
+        viewModel.output.users
+            .asObservable()
+            .bind(to: self.tableView.rx.items)({ (tableView, row, user) -> UITableViewCell in
+                let cell = RxTableViewCell(style: .subtitle, reuseIdentifier: "RxTableViewCell")
                 
-                viewModel.output.isGettingImage(for: user)
-                    .drive(imageView.rx.hasLoadingOverlay)
-                    .disposed(by: cell.disposeBag)
-            }
-            
-            return cell
-        }).disposed(by: disposeBag)
+                cell.textLabel?.text = user.login
+                cell.detailTextLabel?.text = String(user.id)
+                cell.detailTextLabel?.textColor = .darkGray
+                if let imageView = cell.imageView {
+                    let imageSize = CGSize(width: 44, height: 44)
+                    imageView.layer.cornerRadius = imageSize.width / 2
+                    imageView.clipsToBounds = true
+                    Driver.just(R.image.github_octocat()!)
+                        .concat(viewModel.output.avatar(for: user))
+                        .map({ $0 .af_imageScaled(to: imageSize) })
+                        .drive(imageView.rx.image)
+                        .disposed(by: cell.disposeBag)
+                    
+                    viewModel.output.isGettingImage(for: user)
+                        .drive(imageView.rx.hasLoadingOverlay)
+                        .disposed(by: cell.disposeBag)
+                }
+                
+                return cell
+            })
+            .disposed(by: disposeBag)
         
         viewModel.output.error
             .emit(onNext: { [weak self] (error) in

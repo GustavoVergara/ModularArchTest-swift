@@ -101,7 +101,7 @@
 		9B3D34E32224891800E97AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B3D34E52224891800E97AA4 /* MATInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MATInfo.plist; sourceTree = "<group>"; };
 		9B8ECB32225C19B000663A4F /* MAT-SearchUserList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MAT-SearchUserList.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B8ECB33225C19B000663A4F /* MAT-SearchUserListInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MAT-SearchUserListInfo.plist"; path = "/Users/gustavovergaragarcia/Documents/Workspace/iOS Projects/ModularArchTest-swift/MAT/Targets/MAT-SearchUserList/MAT-SearchUserListInfo.plist"; sourceTree = "<absolute>"; };
+		9B8ECB33225C19B000663A4F /* MAT-SearchUserListInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MAT-SearchUserListInfo.plist"; sourceTree = "<group>"; };
 		9B8ECB4B225C1C0F00663A4F /* MATUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MATUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8ECB4C225C1C0F00663A4F /* MATKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MATKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8ECB5D225C289700663A4F /* MATTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATTarget.swift; sourceTree = "<group>"; };
